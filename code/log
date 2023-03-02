@@ -1,0 +1,2978 @@
+CompileCommand: print VecOpMicroBenchmark.profile bool print = true
+
+============================= C1-compiled nmethod ==============================
+----------------------------------- Assembly -----------------------------------
+[0.048s][warning][os] Loading hsdis library failed
+
+Compiled method (c1)      48    4 %     3       VecOpMicroBenchmark::profile @ 7 (42 bytes)
+ total in heap  [0x000003ff90d81310,0x000003ff90d81ce0] = 2512
+ relocation     [0x000003ff90d81468,0x000003ff90d81530] = 200
+ constants      [0x000003ff90d81540,0x000003ff90d81600] = 192
+ main code      [0x000003ff90d81600,0x000003ff90d81a80] = 1152
+ stub code      [0x000003ff90d81a80,0x000003ff90d81ae8] = 104
+ oops           [0x000003ff90d81ae8,0x000003ff90d81af0] = 8
+ metadata       [0x000003ff90d81af0,0x000003ff90d81b00] = 16
+ scopes data    [0x000003ff90d81b00,0x000003ff90d81b80] = 128
+ scopes pcs     [0x000003ff90d81b80,0x000003ff90d81cc0] = 320
+ dependencies   [0x000003ff90d81cc0,0x000003ff90d81cc8] = 8
+ nul chk table  [0x000003ff90d81cc8,0x000003ff90d81ce0] = 24
+
+
+[Constant Pool]
+             Address          hex4                    hex8      
+  0x000003ff90d81540:   0x000003ff      0x000003ff784008c0      
+  0x000003ff90d81544:   0x784008c0                              
+  0x000003ff90d81548:   0x000003ff      0x000003ff784008c0      
+  0x000003ff90d8154c:   0x784008c0                              
+  0x000003ff90d81550:   0x000003ff      0x000003ffb0d31438      
+  0x000003ff90d81554:   0xb0d31438                              
+  0x000003ff90d81558:   0x000003ff      0x000003ff784008c0      
+  0x000003ff90d8155c:   0x784008c0                              
+  0x000003ff90d81560:   0x000003ff      0x000003ff784008c0      
+  0x000003ff90d81564:   0x784008c0                              
+  0x000003ff90d81568:   0x000003ff      0x000003ff784008c0      
+  0x000003ff90d8156c:   0x784008c0                              
+  0x000003ff90d81570:   0x000003ff      0x000003ff784008c0      
+  0x000003ff90d81574:   0x784008c0                              
+  0x000003ff90d81578:   0x000003ff      0x000003ffb0d31438      
+  0x000003ff90d8157c:   0xb0d31438                              
+  0x000003ff90d81580:   0x000003ff      0x000003ffb0e8f388      
+  0x000003ff90d81584:   0xb0e8f388                              
+  0x000003ff90d81588:   0x000003ff      0x000003ff78400520      
+  0x000003ff90d8158c:   0x78400520                              
+  0x000003ff90d81590:   0x000003ff      0x000003ff9834b500      
+  0x000003ff90d81594:   0x9834b500                              
+  0x000003ff90d81598:   0x000003ff      0x000003ff98350600      
+  0x000003ff90d8159c:   0x98350600                              
+  0x000003ff90d815a0:   0x000003ff      0x000003ff98351600      
+  0x000003ff90d815a4:   0x98351600                              
+  0x000003ff90d815a8:   0x000003ff      0x000003ff98350600      
+  0x000003ff90d815ac:   0x98350600                              
+  0x000003ff90d815b0:   0x000003ff      0x000003ff98351600      
+  0x000003ff90d815b4:   0x98351600                              
+  0x000003ff90d815b8:   0x000003ff      0x000003ff98351600      
+  0x000003ff90d815bc:   0x98351600                              
+  0x000003ff90d815c0:   0x000003ff      0x000003ff78400520      
+  0x000003ff90d815c4:   0x78400520                              
+  0x000003ff90d815c8:   0x000003ff      0x000003ff9834b500      
+  0x000003ff90d815cc:   0x9834b500                              
+  0x000003ff90d815d0:   0x000003ff      0x000003ff9834dd00      
+  0x000003ff90d815d4:   0x9834dd00                              
+  0x000003ff90d815d8:   0x00000000      0x0000000000000000      
+  0x000003ff90d815dc:   0x00000000                              
+  0x000003ff90d815e0:   0x00000000      0x0000000000000000      
+  0x000003ff90d815e4:   0x00000000                              
+  0x000003ff90d815e8:   0x00000000      0x0000000000000000      
+  0x000003ff90d815ec:   0x00000000                              
+  0x000003ff90d815f0:   0x00000000      0x0000000000000000      
+  0x000003ff90d815f4:   0x00000000                              
+  0x000003ff90d815f8:   0x00000000      0x0000000000000000      
+  0x000003ff90d815fc:   0x00000000                              
+
+[MachCode]
+[Verified Entry Point]
+  # {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+ ;;  block B5 [0, 0]
+  0x000003ff90d81600: ;   {no_reloc}
+  0x000003ff90d81600: ebde f000 e851 | e3e0 f008 0024 | b904 000f      | a7fb fe70      | e300 f000 0024 | c008 baad babe 
+  0x000003ff90d81620: c009 dead beef 
+ ;; nmethod_entry_barrier (nmethod_entry_barrier) {
+  0x000003ff90d81626: c018 0000 03ff | c019 9839 b4c0 | e300 8020 0004 | c20d 0000 0001 | c0e0 0000 0004 | 0761           
+ ;; } nmethod_entry_barrier (nmethod_entry_barrier)
+  0x000003ff90d81646: ;   {metadata(method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark')}
+  0x000003ff90d81646: c448 ffff ff7d | 5850 40fc      | c258 0000 0002 | 5050 40fc      | c05b 0000 07fe | c25d 0000 0000 
+ ;;   20 branch [EQ]   [CounterOverflowStub: 0x000003ff5c0605b0]
+  0x000003ff90d81666: c084 0000 00fa 
+ ;;  block B6 [0, 0]
+  0x000003ff90d8166c: e330 f150 0024 | e320 f158 0024 
+ ;;  block B0 [0, 7]
+  0x000003ff90d81678: ;   {metadata(method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark')}
+  0x000003ff90d81678: c448 ffff ff68 | eb01 4130 007a 
+
+  0x000003ff90d81684: ;   {runtime_call os::javaTimeNanos()}
+  0x000003ff90d81684: 0700           
+
+  0x000003ff90d81686: ;*invokestatic nanoTime {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@0 (line 11)
+  0x000003ff90d81686: c0e5 0ffd 7ed9 | e330 f150 0004 | e340 f158 0004 | 4150 0000      
+ ;;   46 branch [AL]   [B1] 
+  0x000003ff90d8169c: ;*iload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@7 (line 13)
+  0x000003ff90d8169c: c0f4 0000 004b 
+ ;;  block B2 [15, 31]
+  0x000003ff90d816a2: ; implicit exception: dispatches to 0x000003ff90d81878
+  0x000003ff90d816a2: 5860 300c      | 1565           
+ ;;  116 branch [BE]   [RangeCheckStub: 0x000003ff5c062f00] [bci:21]
+  0x000003ff90d816a8: c0c4 0000 0112 | b914 0075      | eb77 0002 000d 
+
+  0x000003ff90d816b8: ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@21 (line 14)
+  0x000003ff90d816b8: 7807 3010      
+
+  0x000003ff90d816bc: ; implicit exception: dispatches to 0x000003ff90d81928
+  0x000003ff90d816bc: 5870 400c      | 1575           
+ ;;  128 branch [BE]   [RangeCheckStub: 0x000003ff5c063518] [bci:25]
+  0x000003ff90d816c2: c0c4 0000 015d | b914 0075      | eb77 0002 000d 
+
+  0x000003ff90d816d2: ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@25 (line 14)
+  0x000003ff90d816d2: 7827 4010      | b30a 0002      | 1565           
+ ;;  142 branch [BE]   [RangeCheckStub: 0x000003ff5c063ad0] [bci:27]
+  0x000003ff90d816dc: c0c4 0000 017e | b914 0065      | eb66 0002 000d 
+
+  0x000003ff90d816ec: ;*fastore {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@27 (line 14)
+  0x000003ff90d816ec: 7006 3010      | c258 0000 0001 
+
+  0x000003ff90d816f6: ;   {metadata(method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark')}
+  0x000003ff90d816f6: c468 ffff ff31 | 5870 6100      | c278 0000 0002 | 5070 6100      | c07b 0000 3ffe | c27d 0000 0000 
+ ;;  166 branch [EQ]   [CounterOverflowStub: 0x000003ff5c064310]
+  0x000003ff90d81716: ;*goto {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@31 (line 13)
+  0x000003ff90d81716: c084 0000 018f 
+
+  0x000003ff90d8171c: ; ImmutableOopMap {Z_R3=Oop Z_R4=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) VecOpMicroBenchmark::profile@31 (line 13)
+  0x000003ff90d8171c: e360 83b8 0004 
+
+  0x000003ff90d81722: ;   {poll}
+  0x000003ff90d81722: 916f 6000      
+
+  0x000003ff90d81726: ;   {metadata(method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark')}
+  0x000003ff90d81726: c468 ffff ff1d 
+
+  0x000003ff90d8172c: ;*goto {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@31 (line 13)
+  0x000003ff90d8172c: eb01 6160 007a 
+ ;;  block B1 [7, 12]
+  0x000003ff90d81732: c25d 0000 0400 
+
+  0x000003ff90d81738: ;   {metadata(method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark')}
+  0x000003ff90d81738: c468 ffff ff18 | a779 0150      | a744 0004      | a779 0140      | e3a7 6000 0004 | 41a0 a001      | e3a7 6000 0024 
+ ;;  106 branch [LT]   [B2] 
+  0x000003ff90d8175a: ;*if_icmpge {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@12 (line 13)
+  0x000003ff90d8175a: a744 ffa4      
+ ;;  block B3 [34, 41]
+  0x000003ff90d8175e: e320 f180 0024 
+
+  0x000003ff90d81764: ;   {metadata(method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark')}
+  0x000003ff90d81764: c438 ffff ff06 | eb01 3178 007a 
+
+  0x000003ff90d81770: ;   {runtime_call os::javaTimeNanos()}
+  0x000003ff90d81770: 0700           
+
+  0x000003ff90d81772: ;*invokestatic nanoTime {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@34 (line 17)
+  0x000003ff90d81772: c0e5 0ffd 7e63 | e330 f180 0004 | b909 0023      | e310 83b8 0004 
+ ;; pop_frame_restore_retPC:
+  0x000003ff90d81788: e3e0 f198 0004 | a7fb 0190      
+
+  0x000003ff90d81792: ;   {poll_return}
+  0x000003ff90d81792: 916f 1000      
+
+  0x000003ff90d81796: ;*lreturn {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@41 (line 19)
+  0x000003ff90d81796: 07fe           
+ ;;  block B4 [7, 7]
+  0x000003ff90d81798: ebde f000 e851 | e3e0 f008 0024 | b904 000f      | a7fb fe70      | e300 f000 0024 | c008 baad babe 
+  0x000003ff90d817b8: c009 dead beef 
+ ;; nmethod_entry_barrier (nmethod_entry_barrier) {
+  0x000003ff90d817be: c018 0000 03ff | c019 9839 b4c0 | e300 8020 0004 | c20d ffff ffff | c0e0 0000 0004 | 0761           
+ ;; } nmethod_entry_barrier (nmethod_entry_barrier)
+  0x000003ff90d817de: b904 0022      | a739 0020      | b914 0033      | e333 2000 0004 | a749 0018      | b914 0044      | e344 2000 0004 
+  0x000003ff90d817fe: a759 0008      | b914 0055      | e365 2000 0004 | 4150 0000      | b914 0055      | 5855 2000      | e330 f178 0024 
+  0x000003ff90d8181e: e340 f170 0024 | e360 f168 0024 | 5050 f160      | 0700           
+
+  0x000003ff90d81830: ;   {runtime_call SharedRuntime::OSR_migration_end(long*)}
+  0x000003ff90d81830: 0700           | c0e5 1008 6dab | 5850 f160      | e360 f168 0004 | b904 0026      | e340 f170 0004 | b904 0034      
+  0x000003ff90d81850: e340 f178 0004 
+ ;;   90 branch [AL]   [B1] 
+  0x000003ff90d81856: a7f4 ff6e      
+ ;; CounterOverflowStub slow case
+  0x000003ff90d8185a: ;   {metadata({method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark')}
+  0x000003ff90d8185a: c418 ffff fe97 | e310 f018 0024 | e548 f010 ffff 
+
+  0x000003ff90d8186c: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x000003ff90d8186c: 0700           
+
+  0x000003ff90d8186e: ; ImmutableOopMap {Z_R2=Oop Z_R3=Oop }
+                      ;*synchronization entry
+                      ; - VecOpMicroBenchmark::profile@-1 (line 11)
+  0x000003ff90d8186e: c0e5 03ae 4e49 | a7f4 fefc      
+ ;; ImplicitNullCheckStub slow case
+  0x000003ff90d81878: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x000003ff90d81878: 0700           
+
+  0x000003ff90d8187a: ; ImmutableOopMap {Z_R3=Oop Z_R4=Oop }
+                      ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@21 (line 14)
+  0x000003ff90d8187a: c0e5 03ae 76c3 
+ ;; stop:  {
+  0x000003ff90d81880: c028 0000 03ff | c029 b127 1cb2 | c038 0000 03ff | c039 b113 7c52 | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff90d818a0: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff90d818ba: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; RangeCheckStub slow case
+  0x000003ff90d818cc: b904 0015      | b904 0003      
+
+  0x000003ff90d818d4: ;   {runtime_call throw_range_check_failed Runtime1 stub}
+  0x000003ff90d818d4: 0700           
+
+  0x000003ff90d818d6: ; ImmutableOopMap {Z_R3=Oop Z_R4=Oop }
+                      ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@21 (line 14)
+  0x000003ff90d818d6: c0e5 03ae 7e95 
+ ;; stop:  {
+  0x000003ff90d818dc: c028 0000 03ff | c029 b127 1cb2 | c038 0000 03ff | c039 b113 7c52 | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff90d818fc: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff90d81916: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; ImplicitNullCheckStub slow case
+  0x000003ff90d81928: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x000003ff90d81928: 0700           
+
+  0x000003ff90d8192a: ; ImmutableOopMap {Z_R3=Oop Z_R4=Oop }
+                      ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@25 (line 14)
+  0x000003ff90d8192a: c0e5 03ae 766b 
+ ;; stop:  {
+  0x000003ff90d81930: c028 0000 03ff | c029 b127 1cb2 | c038 0000 03ff | c039 b113 7c52 | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff90d81950: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff90d8196a: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; RangeCheckStub slow case
+  0x000003ff90d8197c: b904 0015      | b904 0004      
+
+  0x000003ff90d81984: ;   {runtime_call throw_range_check_failed Runtime1 stub}
+  0x000003ff90d81984: 0700           
+
+  0x000003ff90d81986: ; ImmutableOopMap {Z_R3=Oop Z_R4=Oop }
+                      ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@25 (line 14)
+  0x000003ff90d81986: c0e5 03ae 7e3d 
+ ;; stop:  {
+  0x000003ff90d8198c: c028 0000 03ff | c029 b127 1cb2 | c038 0000 03ff | c039 b113 7c52 | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff90d819ac: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff90d819c6: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; RangeCheckStub slow case
+  0x000003ff90d819d8: b904 0015      | b904 0003      
+
+  0x000003ff90d819e0: ;   {runtime_call throw_range_check_failed Runtime1 stub}
+  0x000003ff90d819e0: 0700           
+
+  0x000003ff90d819e2: ; ImmutableOopMap {Z_R3=Oop Z_R4=Oop }
+                      ;*fastore {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@27 (line 14)
+  0x000003ff90d819e2: c0e5 03ae 7e0f 
+ ;; stop:  {
+  0x000003ff90d819e8: c028 0000 03ff | c029 b127 1cb2 | c038 0000 03ff | c039 b113 7c52 | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff90d81a08: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff90d81a22: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; CounterOverflowStub slow case
+  0x000003ff90d81a34: ;   {metadata({method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark')}
+  0x000003ff90d81a34: c418 ffff fdc6 | e310 f018 0024 | e548 f010 001f | 0700           
+
+  0x000003ff90d81a48: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x000003ff90d81a48: 0700           
+
+  0x000003ff90d81a4a: ; ImmutableOopMap {Z_R3=Oop Z_R4=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) VecOpMicroBenchmark::profile@31 (line 13)
+  0x000003ff90d81a4a: c0e5 03ae 4d5b | a7f4 fe66      
+ ;; Unwind handler
+  0x000003ff90d81a54: e320 8430 0004 | e548 8430 0000 | e548 8438 0000 
+ ;; pop_frame:
+  0x000003ff90d81a66: e3f0 f000 0004 | e330 f008 0004 | a55d 03ff      | c059 9835 2bc0 | 07f5           | 0000           
+[Exception Handler]
+  0x000003ff90d81a80: ;   {no_reloc}
+  0x000003ff90d81a80: 0700           | c0e5 03ae 613f | c028 0000 03ff | c029 b127 1cb2 | c038 0000 03ff | c039 b113 7c52 
+  0x000003ff90d81aa0: 0de0           | e3e0 f008 0024 | b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+  0x000003ff90d81ac2: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+[Deopt Handler Code]
+  0x000003ff90d81ad4: c018 0000 03ff | c019 9840 eec0 | 0de1           | 0000           | 0000           | 0000           
+[/MachCode]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Oops:
+  0x000003ff90d81ae8:   0x00000000ffe59380 a 'jdk/internal/loader/ClassLoaders$AppClassLoader'{0x00000000ffe59380}
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Metadata:
+  0x000003ff90d81af0:   0x000003ff784008c0 method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+  0x000003ff90d81af8:   0x000003ff78400520 {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+pc-bytecode offsets:
+PcDesc(pc=0x000003ff90d815ff offset=ffffffff bits=0):
+PcDesc(pc=0x000003ff90d8168c offset=8c bits=0):
+   VecOpMicroBenchmark::profile@0 (line 11)
+PcDesc(pc=0x000003ff90d816a2 offset=a2 bits=0):
+   VecOpMicroBenchmark::profile@7 (line 13)
+PcDesc(pc=0x000003ff90d816bc offset=bc bits=0):
+   VecOpMicroBenchmark::profile@21 (line 14)
+PcDesc(pc=0x000003ff90d816d6 offset=d6 bits=0):
+   VecOpMicroBenchmark::profile@25 (line 14)
+PcDesc(pc=0x000003ff90d816f0 offset=f0 bits=0):
+   VecOpMicroBenchmark::profile@27 (line 14)
+PcDesc(pc=0x000003ff90d8171c offset=11c bits=0):
+   VecOpMicroBenchmark::profile@31 (line 13)
+PcDesc(pc=0x000003ff90d81722 offset=122 bits=1):
+   VecOpMicroBenchmark::profile@31 (line 13)  reexecute=true
+   Locals
+    - l0: reg Z_R4 [8],oop
+    - l1: reg Z_R3 [6],oop
+    - l2: 0
+    - l3: reg Z_R2 [4],long
+    - l4: reg Z_R5 [10],int
+PcDesc(pc=0x000003ff90d81732 offset=132 bits=0):
+   VecOpMicroBenchmark::profile@31 (line 13)
+PcDesc(pc=0x000003ff90d8175e offset=15e bits=0):
+   VecOpMicroBenchmark::profile@12 (line 13)
+PcDesc(pc=0x000003ff90d81778 offset=178 bits=0):
+   VecOpMicroBenchmark::profile@34 (line 17)
+PcDesc(pc=0x000003ff90d81798 offset=198 bits=0):
+   VecOpMicroBenchmark::profile@41 (line 19)
+PcDesc(pc=0x000003ff90d81874 offset=274 bits=0):
+   VecOpMicroBenchmark::profile@-1 (line 11)
+   Locals
+    - l0: reg Z_R2 [4],oop
+    - l1: reg Z_R3 [6],oop
+    - l2: empty
+    - l3: empty
+    - l4: empty
+PcDesc(pc=0x000003ff90d81880 offset=280 bits=0):
+   VecOpMicroBenchmark::profile@21 (line 14)
+   Locals
+    - l0: empty
+    - l1: empty
+    - l2: empty
+    - l3: empty
+    - l4: empty
+PcDesc(pc=0x000003ff90d818dc offset=2dc bits=0):
+   VecOpMicroBenchmark::profile@21 (line 14)
+   Locals
+    - l0: empty
+    - l1: empty
+    - l2: empty
+    - l3: empty
+    - l4: empty
+PcDesc(pc=0x000003ff90d81930 offset=330 bits=0):
+   VecOpMicroBenchmark::profile@25 (line 14)
+   Locals
+    - l0: empty
+    - l1: empty
+    - l2: empty
+    - l3: empty
+    - l4: empty
+PcDesc(pc=0x000003ff90d8198c offset=38c bits=0):
+   VecOpMicroBenchmark::profile@25 (line 14)
+   Locals
+    - l0: empty
+    - l1: empty
+    - l2: empty
+    - l3: empty
+    - l4: empty
+PcDesc(pc=0x000003ff90d819e8 offset=3e8 bits=0):
+   VecOpMicroBenchmark::profile@27 (line 14)
+   Locals
+    - l0: empty
+    - l1: empty
+    - l2: empty
+    - l3: empty
+    - l4: empty
+PcDesc(pc=0x000003ff90d81a50 offset=450 bits=1):
+   VecOpMicroBenchmark::profile@31 (line 13)  reexecute=true
+   Locals
+    - l0: reg Z_R4 [8],oop
+    - l1: reg Z_R3 [6],oop
+    - l2: 0
+    - l3: reg Z_R2 [4],long
+    - l4: reg Z_R5 [10],int
+PcDesc(pc=0x000003ff90d81ba9 offset=5a9 bits=0):
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+oop maps:ImmutableOopMapSet contains 8 OopMaps
+
+ImmutableOopMap {Z_R3=Oop Z_R4=Oop } pc offsets: 290 
+ImmutableOopMap {Z_R2=Oop Z_R3=Oop } pc offsets: 628 
+ImmutableOopMap {Z_R3=Oop Z_R4=Oop } pc offsets: 640 732 816 908 1000 1104 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+scopes:
+ScopeDesc(pc=0x000003ff90d8168c offset=8c):
+   VecOpMicroBenchmark::profile@0 (line 11)
+ScopeDesc(pc=0x000003ff90d816a2 offset=a2):
+   VecOpMicroBenchmark::profile@7 (line 13)
+ScopeDesc(pc=0x000003ff90d816bc offset=bc):
+   VecOpMicroBenchmark::profile@21 (line 14)
+ScopeDesc(pc=0x000003ff90d816d6 offset=d6):
+   VecOpMicroBenchmark::profile@25 (line 14)
+ScopeDesc(pc=0x000003ff90d816f0 offset=f0):
+   VecOpMicroBenchmark::profile@27 (line 14)
+ScopeDesc(pc=0x000003ff90d8171c offset=11c):
+   VecOpMicroBenchmark::profile@31 (line 13)
+ScopeDesc(pc=0x000003ff90d81722 offset=122):
+   VecOpMicroBenchmark::profile@31 (line 13)  reexecute=true
+   Locals
+    - l0: reg Z_R4 [8],oop
+    - l1: reg Z_R3 [6],oop
+    - l2: 0
+    - l3: reg Z_R2 [4],long
+    - l4: reg Z_R5 [10],int
+ScopeDesc(pc=0x000003ff90d81732 offset=132):
+   VecOpMicroBenchmark::profile@31 (line 13)
+ScopeDesc(pc=0x000003ff90d8175e offset=15e):
+   VecOpMicroBenchmark::profile@12 (line 13)
+ScopeDesc(pc=0x000003ff90d81778 offset=178):
+   VecOpMicroBenchmark::profile@34 (line 17)
+ScopeDesc(pc=0x000003ff90d81798 offset=198):
+   VecOpMicroBenchmark::profile@41 (line 19)
+ScopeDesc(pc=0x000003ff90d81874 offset=274):
+   VecOpMicroBenchmark::profile@-1 (line 11)
+   Locals
+    - l0: reg Z_R2 [4],oop
+    - l1: reg Z_R3 [6],oop
+    - l2: empty
+    - l3: empty
+    - l4: empty
+ScopeDesc(pc=0x000003ff90d81880 offset=280):
+   VecOpMicroBenchmark::profile@21 (line 14)
+   Locals
+    - l0: empty
+    - l1: empty
+    - l2: empty
+    - l3: empty
+    - l4: empty
+ScopeDesc(pc=0x000003ff90d818dc offset=2dc):
+   VecOpMicroBenchmark::profile@21 (line 14)
+   Locals
+    - l0: empty
+    - l1: empty
+    - l2: empty
+    - l3: empty
+    - l4: empty
+ScopeDesc(pc=0x000003ff90d81930 offset=330):
+   VecOpMicroBenchmark::profile@25 (line 14)
+   Locals
+    - l0: empty
+    - l1: empty
+    - l2: empty
+    - l3: empty
+    - l4: empty
+ScopeDesc(pc=0x000003ff90d8198c offset=38c):
+   VecOpMicroBenchmark::profile@25 (line 14)
+   Locals
+    - l0: empty
+    - l1: empty
+    - l2: empty
+    - l3: empty
+    - l4: empty
+ScopeDesc(pc=0x000003ff90d819e8 offset=3e8):
+   VecOpMicroBenchmark::profile@27 (line 14)
+   Locals
+    - l0: empty
+    - l1: empty
+    - l2: empty
+    - l3: empty
+    - l4: empty
+ScopeDesc(pc=0x000003ff90d81a50 offset=450):
+   VecOpMicroBenchmark::profile@31 (line 13)  reexecute=true
+   Locals
+    - l0: reg Z_R4 [8],oop
+    - l1: reg Z_R3 [6],oop
+    - l2: 0
+    - l3: reg Z_R2 [4],long
+    - l4: reg Z_R5 [10],int
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+relocations:
+         @0x000003ff90d81468: 0060
+relocInfo@0x000003ff90d81468 [type=0(none) addr=0x000003ff90d81600 offset=192]
+         @0x000003ff90d8146a: 78016023
+relocInfo@0x000003ff90d8146c [type=12(metadata) addr=0x000003ff90d81646 offset=70 data=1] | [metadata_addr=0x000003ff90d81af0 *=0x000003ff784008c0 offset=0]metadata_value=0x000003ff784008c0: method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+         @0x000003ff90d8146e: 4c00
+relocInfo@0x000003ff90d8146e [type=9(section_word) addr=0x000003ff90d81646 offset=0 format=2] | [target=0x000003ff90d81540]
+         @0x000003ff90d81470: 78016019
+relocInfo@0x000003ff90d81472 [type=12(metadata) addr=0x000003ff90d81678 offset=50 data=1] | [metadata_addr=0x000003ff90d81af0 *=0x000003ff784008c0 offset=0]metadata_value=0x000003ff784008c0: method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+         @0x000003ff90d81474: 7c01fff04c00
+relocInfo@0x000003ff90d81478 [type=9(section_word) addr=0x000003ff90d81678 offset=0 format=2 data=-16] | [target=0x000003ff90d81548]
+         @0x000003ff90d8147a: 78047006
+relocInfo@0x000003ff90d8147c [type=14(runtime_call_w_cp) addr=0x000003ff90d81684 offset=12 data=4] | [destination=0x000003ffb0d31438]
+         @0x000003ff90d8147e: 7c01ffe04c00
+relocInfo@0x000003ff90d81482 [type=9(section_word) addr=0x000003ff90d81684 offset=0 format=2 data=-32] | [target=0x000003ff90d81550]
+         @0x000003ff90d81484: 78016039
+relocInfo@0x000003ff90d81486 [type=12(metadata) addr=0x000003ff90d816f6 offset=114 data=1] | [metadata_addr=0x000003ff90d81af0 *=0x000003ff784008c0 offset=0]metadata_value=0x000003ff784008c0: method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+         @0x000003ff90d81488: 7c01ffd04c00
+relocInfo@0x000003ff90d8148c [type=9(section_word) addr=0x000003ff90d816f6 offset=0 format=2 data=-48] | [target=0x000003ff90d81558]
+         @0x000003ff90d8148e: 5016
+relocInfo@0x000003ff90d8148e [type=10(poll) addr=0x000003ff90d81722 offset=44]
+         @0x000003ff90d81490: 78016002
+relocInfo@0x000003ff90d81492 [type=12(metadata) addr=0x000003ff90d81726 offset=4 data=1] | [metadata_addr=0x000003ff90d81af0 *=0x000003ff784008c0 offset=0]metadata_value=0x000003ff784008c0: method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+         @0x000003ff90d81494: 7c01ffc04c00
+relocInfo@0x000003ff90d81498 [type=9(section_word) addr=0x000003ff90d81726 offset=0 format=2 data=-64] | [target=0x000003ff90d81560]
+         @0x000003ff90d8149a: 78016009
+relocInfo@0x000003ff90d8149c [type=12(metadata) addr=0x000003ff90d81738 offset=18 data=1] | [metadata_addr=0x000003ff90d81af0 *=0x000003ff784008c0 offset=0]metadata_value=0x000003ff784008c0: method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+         @0x000003ff90d8149e: 7c01ffb04c00
+relocInfo@0x000003ff90d814a2 [type=9(section_word) addr=0x000003ff90d81738 offset=0 format=2 data=-80] | [target=0x000003ff90d81568]
+         @0x000003ff90d814a4: 78016016
+relocInfo@0x000003ff90d814a6 [type=12(metadata) addr=0x000003ff90d81764 offset=44 data=1] | [metadata_addr=0x000003ff90d81af0 *=0x000003ff784008c0 offset=0]metadata_value=0x000003ff784008c0: method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+         @0x000003ff90d814a8: 7c01ffa04c00
+relocInfo@0x000003ff90d814ac [type=9(section_word) addr=0x000003ff90d81764 offset=0 format=2 data=-96] | [target=0x000003ff90d81570]
+         @0x000003ff90d814ae: 780e7006
+relocInfo@0x000003ff90d814b0 [type=14(runtime_call_w_cp) addr=0x000003ff90d81770 offset=12 data=14] | [destination=0x000003ffb0d31438]
+         @0x000003ff90d814b2: 7c01ff904c00
+relocInfo@0x000003ff90d814b6 [type=9(section_word) addr=0x000003ff90d81770 offset=0 format=2 data=-112] | [target=0x000003ff90d81578]
+         @0x000003ff90d814b8: 5811
+relocInfo@0x000003ff90d814b8 [type=11(poll_return) addr=0x000003ff90d81792 offset=34]
+         @0x000003ff90d814ba: 7810704f
+relocInfo@0x000003ff90d814bc [type=14(runtime_call_w_cp) addr=0x000003ff90d81830 offset=158 data=16] | [destination=0x000003ffb0e8f388]
+         @0x000003ff90d814be: 7c01ff804c00
+relocInfo@0x000003ff90d814c2 [type=9(section_word) addr=0x000003ff90d81830 offset=0 format=2 data=-128] | [target=0x000003ff90d81580]
+         @0x000003ff90d814c4: 78026015
+relocInfo@0x000003ff90d814c6 [type=12(metadata) addr=0x000003ff90d8185a offset=42 data=2] | [metadata_addr=0x000003ff90d81af8 *=0x000003ff78400520 offset=0]metadata_value=0x000003ff78400520: {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+         @0x000003ff90d814c8: 7c01ff704c00
+relocInfo@0x000003ff90d814cc [type=9(section_word) addr=0x000003ff90d8185a offset=0 format=2 data=-144] | [target=0x000003ff90d81588]
+         @0x000003ff90d814ce: 78147009
+relocInfo@0x000003ff90d814d0 [type=14(runtime_call_w_cp) addr=0x000003ff90d8186c offset=18 data=20] | [destination=0x000003ff9834b500]
+         @0x000003ff90d814d2: 7c01ff604c00
+relocInfo@0x000003ff90d814d6 [type=9(section_word) addr=0x000003ff90d8186c offset=0 format=2 data=-160] | [target=0x000003ff90d81590]
+         @0x000003ff90d814d8: 78167006
+relocInfo@0x000003ff90d814da [type=14(runtime_call_w_cp) addr=0x000003ff90d81878 offset=12 data=22] | [destination=0x000003ff98350600]
+         @0x000003ff90d814dc: 7c01ff504c00
+relocInfo@0x000003ff90d814e0 [type=9(section_word) addr=0x000003ff90d81878 offset=0 format=2 data=-176] | [target=0x000003ff90d81598]
+         @0x000003ff90d814e2: 7818702e
+relocInfo@0x000003ff90d814e4 [type=14(runtime_call_w_cp) addr=0x000003ff90d818d4 offset=92 data=24] | [destination=0x000003ff98351600]
+         @0x000003ff90d814e6: 7c01ff404c00
+relocInfo@0x000003ff90d814ea [type=9(section_word) addr=0x000003ff90d818d4 offset=0 format=2 data=-192] | [target=0x000003ff90d815a0]
+         @0x000003ff90d814ec: 781a702a
+relocInfo@0x000003ff90d814ee [type=14(runtime_call_w_cp) addr=0x000003ff90d81928 offset=84 data=26] | [destination=0x000003ff98350600]
+         @0x000003ff90d814f0: 7c01ff304c00
+relocInfo@0x000003ff90d814f4 [type=9(section_word) addr=0x000003ff90d81928 offset=0 format=2 data=-208] | [target=0x000003ff90d815a8]
+         @0x000003ff90d814f6: 781c702e
+relocInfo@0x000003ff90d814f8 [type=14(runtime_call_w_cp) addr=0x000003ff90d81984 offset=92 data=28] | [destination=0x000003ff98351600]
+         @0x000003ff90d814fa: 7c01ff204c00
+relocInfo@0x000003ff90d814fe [type=9(section_word) addr=0x000003ff90d81984 offset=0 format=2 data=-224] | [target=0x000003ff90d815b0]
+         @0x000003ff90d81500: 781e702e
+relocInfo@0x000003ff90d81502 [type=14(runtime_call_w_cp) addr=0x000003ff90d819e0 offset=92 data=30] | [destination=0x000003ff98351600]
+         @0x000003ff90d81504: 7c01ff104c00
+relocInfo@0x000003ff90d81508 [type=9(section_word) addr=0x000003ff90d819e0 offset=0 format=2 data=-240] | [target=0x000003ff90d815b8]
+         @0x000003ff90d8150a: 7802602a
+relocInfo@0x000003ff90d8150c [type=12(metadata) addr=0x000003ff90d81a34 offset=84 data=2] | [metadata_addr=0x000003ff90d81af8 *=0x000003ff78400520 offset=0]metadata_value=0x000003ff78400520: {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+         @0x000003ff90d8150e: 7c01ff004c00
+relocInfo@0x000003ff90d81512 [type=9(section_word) addr=0x000003ff90d81a34 offset=0 format=2 data=-256] | [target=0x000003ff90d815c0]
+         @0x000003ff90d81514: 7822700a
+relocInfo@0x000003ff90d81516 [type=14(runtime_call_w_cp) addr=0x000003ff90d81a48 offset=20 data=34] | [destination=0x000003ff9834b500]
+         @0x000003ff90d81518: 7c01fef04c00
+relocInfo@0x000003ff90d8151c [type=9(section_word) addr=0x000003ff90d81a48 offset=0 format=2 data=-272] | [target=0x000003ff90d815c8]
+         @0x000003ff90d8151e: 001c
+relocInfo@0x000003ff90d8151e [type=0(none) addr=0x000003ff90d81a80 offset=56]
+         @0x000003ff90d81520: 78247000
+relocInfo@0x000003ff90d81522 [type=14(runtime_call_w_cp) addr=0x000003ff90d81a80 offset=0 data=36] | [destination=0x000003ff9834dd00]
+         @0x000003ff90d81524: 7c01fee04c00
+relocInfo@0x000003ff90d81528 [type=9(section_word) addr=0x000003ff90d81a80 offset=0 format=2 data=-288] | [target=0x000003ff90d815d0]
+         @0x000003ff90d8152a: 0000
+relocInfo@0x000003ff90d8152a [type=0(none) addr=0x000003ff90d81a80 offset=0]
+         @0x000003ff90d8152c: 0000
+relocInfo@0x000003ff90d8152c [type=0(none) addr=0x000003ff90d81a80 offset=0]
+         @0x000003ff90d8152e: 0000
+relocInfo@0x000003ff90d8152e [type=0(none) addr=0x000003ff90d81a80 offset=0]
+         @0x000003ff90d81530: 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Dependencies:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ExceptionHandlerTable (size = 0 bytes)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ImplicitExceptionTable (size = 2 entries, 20 bytes):
+{
+   < 0x000003ff90d816a2, 0x000003ff90d81878 > < 0x000003ff90d816bc, 0x000003ff90d81928 > 
+}
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Recorded oops:
+#0: 0x0000000000000000 nullptr-oop
+#1: 0x00000000ffe59380 a 'jdk/internal/loader/ClassLoaders$AppClassLoader'{0x00000000ffe59380}
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Recorded metadata:
+#0: 0x0000000000000000 nullptr-oop
+#1: 0x000003ff784008c0 method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+#2: 0x000003ff78400520 {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+============================= C1-compiled nmethod ==============================
+----------------------------------- Assembly -----------------------------------
+
+Compiled method (c1)      55    7       3       VecOpMicroBenchmark::profile (42 bytes)
+ total in heap  [0x000003ff90d82210,0x000003ff90d82a90] = 2176
+ relocation     [0x000003ff90d82368,0x000003ff90d82418] = 176
+ constants      [0x000003ff90d82440,0x000003ff90d82500] = 192
+ main code      [0x000003ff90d82500,0x000003ff90d82860] = 864
+ stub code      [0x000003ff90d82860,0x000003ff90d828c8] = 104
+ oops           [0x000003ff90d828c8,0x000003ff90d828d0] = 8
+ metadata       [0x000003ff90d828d0,0x000003ff90d828e0] = 16
+ scopes data    [0x000003ff90d828e0,0x000003ff90d82950] = 112
+ scopes pcs     [0x000003ff90d82950,0x000003ff90d82a70] = 288
+ dependencies   [0x000003ff90d82a70,0x000003ff90d82a78] = 8
+ nul chk table  [0x000003ff90d82a78,0x000003ff90d82a90] = 24
+
+
+[Constant Pool]
+             Address          hex4                    hex8      
+  0x000003ff90d82440:   0x000003ff      0x000003ff784008c0      
+  0x000003ff90d82444:   0x784008c0                              
+  0x000003ff90d82448:   0x000003ff      0x000003ff784008c0      
+  0x000003ff90d8244c:   0x784008c0                              
+  0x000003ff90d82450:   0x000003ff      0x000003ffb0d31438      
+  0x000003ff90d82454:   0xb0d31438                              
+  0x000003ff90d82458:   0x000003ff      0x000003ff784008c0      
+  0x000003ff90d8245c:   0x784008c0                              
+  0x000003ff90d82460:   0x000003ff      0x000003ff784008c0      
+  0x000003ff90d82464:   0x784008c0                              
+  0x000003ff90d82468:   0x000003ff      0x000003ff784008c0      
+  0x000003ff90d8246c:   0x784008c0                              
+  0x000003ff90d82470:   0x000003ff      0x000003ff784008c0      
+  0x000003ff90d82474:   0x784008c0                              
+  0x000003ff90d82478:   0x000003ff      0x000003ffb0d31438      
+  0x000003ff90d8247c:   0xb0d31438                              
+  0x000003ff90d82480:   0x000003ff      0x000003ff78400520      
+  0x000003ff90d82484:   0x78400520                              
+  0x000003ff90d82488:   0x000003ff      0x000003ff9834b500      
+  0x000003ff90d8248c:   0x9834b500                              
+  0x000003ff90d82490:   0x000003ff      0x000003ff98350600      
+  0x000003ff90d82494:   0x98350600                              
+  0x000003ff90d82498:   0x000003ff      0x000003ff98351600      
+  0x000003ff90d8249c:   0x98351600                              
+  0x000003ff90d824a0:   0x000003ff      0x000003ff98350600      
+  0x000003ff90d824a4:   0x98350600                              
+  0x000003ff90d824a8:   0x000003ff      0x000003ff98351600      
+  0x000003ff90d824ac:   0x98351600                              
+  0x000003ff90d824b0:   0x000003ff      0x000003ff78400520      
+  0x000003ff90d824b4:   0x78400520                              
+  0x000003ff90d824b8:   0x000003ff      0x000003ff9834b500      
+  0x000003ff90d824bc:   0x9834b500                              
+  0x000003ff90d824c0:   0x000003ff      0x000003ff9834dd00      
+  0x000003ff90d824c4:   0x9834dd00                              
+  0x000003ff90d824c8:   0x00000000      0x0000000000000000      
+  0x000003ff90d824cc:   0x00000000                              
+  0x000003ff90d824d0:   0x00000000      0x0000000000000000      
+  0x000003ff90d824d4:   0x00000000                              
+  0x000003ff90d824d8:   0x00000000      0x0000000000000000      
+  0x000003ff90d824dc:   0x00000000                              
+  0x000003ff90d824e0:   0x00000000      0x0000000000000000      
+  0x000003ff90d824e4:   0x00000000                              
+  0x000003ff90d824e8:   0x00000000      0x0000000000000000      
+  0x000003ff90d824ec:   0x00000000                              
+  0x000003ff90d824f0:   0x00000000      0x0000000000000000      
+  0x000003ff90d824f4:   0x00000000                              
+  0x000003ff90d824f8:   0x00000000      0x0000000000000000      
+  0x000003ff90d824fc:   0x00000000                              
+
+[MachCode]
+[Verified Entry Point]
+  # {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+  # parm0:    Z_R2:Z_R2   = '[F'
+  # parm1:    Z_R3:Z_R3   = '[F'
+  #           [sp+0x170]  (sp of caller)
+ ;;  block B4 [0, 0]
+  0x000003ff90d82500: ;   {no_reloc}
+  0x000003ff90d82500: ebde f000 e851 | e3e0 f008 0024 | b904 000f      | a7fb fe90      | e300 f000 0024 | c008 baad babe 
+  0x000003ff90d82520: c009 dead beef 
+ ;; nmethod_entry_barrier (nmethod_entry_barrier) {
+  0x000003ff90d82526: c018 0000 03ff | c019 9839 b4c0 | e300 8020 0004 | c20d 0000 0001 | c0e0 0000 0004 | 0761           
+ ;; } nmethod_entry_barrier (nmethod_entry_barrier)
+  0x000003ff90d82546: ;   {metadata(method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark')}
+  0x000003ff90d82546: c448 ffff ff7d | 5850 40fc      | c258 0000 0002 | 5050 40fc      | c05b 0000 07fe | c25d 0000 0000 
+ ;;   20 branch [EQ]   [CounterOverflowStub: 0x000003ff5c023328]
+  0x000003ff90d82566: c084 0000 0095 
+ ;;  block B5 [0, 0]
+  0x000003ff90d8256c: e330 f150 0024 | e320 f158 0024 
+ ;;  block B0 [0, 7]
+  0x000003ff90d82578: ;   {metadata(method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark')}
+  0x000003ff90d82578: c448 ffff ff68 | eb01 4130 007a 
+
+  0x000003ff90d82584: ;   {runtime_call os::javaTimeNanos()}
+  0x000003ff90d82584: 0700           
+
+  0x000003ff90d82586: ;*invokestatic nanoTime {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@0 (line 11)
+  0x000003ff90d82586: c0e5 0ffd 7759 | 4130 0000      | e340 f150 0004 | e350 f158 0004 
+ ;;   40 branch [AL]   [B1] 
+  0x000003ff90d8259c: ;*iload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@7 (line 13)
+  0x000003ff90d8259c: c0f4 0000 0047 
+ ;;  block B2 [15, 31]
+  0x000003ff90d825a2: ; implicit exception: dispatches to 0x000003ff90d826b0
+  0x000003ff90d825a2: 5860 400c      | 1563           
+ ;;   66 branch [BE]   [RangeCheckStub: 0x000003ff5c024a78] [bci:21]
+  0x000003ff90d825a8: c0c4 0000 00ae | b914 0063      | eb66 0002 000d 
+
+  0x000003ff90d825b8: ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@21 (line 14)
+  0x000003ff90d825b8: 7806 4010      
+
+  0x000003ff90d825bc: ; implicit exception: dispatches to 0x000003ff90d82760
+  0x000003ff90d825bc: 5860 500c      | 1563           
+ ;;   78 branch [BE]   [RangeCheckStub: 0x000003ff5c025090] [bci:25]
+  0x000003ff90d825c2: c0c4 0000 00f9 | b914 0063      | eb66 0002 000d 
+
+  0x000003ff90d825d2: ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@25 (line 14)
+  0x000003ff90d825d2: 7826 5010      | b30a 0002      | b914 0063      | eb66 0002 000d 
+
+  0x000003ff90d825e4: ;*fastore {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@27 (line 14)
+  0x000003ff90d825e4: 7006 4010      | c238 0000 0001 
+
+  0x000003ff90d825ee: ;   {metadata(method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark')}
+  0x000003ff90d825ee: c468 ffff ff35 | 5870 6100      | c278 0000 0002 | 5070 6100      | c07b 0000 3ffe | c27d 0000 0000 
+ ;;  112 branch [EQ]   [CounterOverflowStub: 0x000003ff5c025b78]
+  0x000003ff90d8260e: ;*goto {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@31 (line 13)
+  0x000003ff90d8260e: c084 0000 0101 
+
+  0x000003ff90d82614: ; ImmutableOopMap {Z_R5=Oop Z_R4=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) VecOpMicroBenchmark::profile@31 (line 13)
+  0x000003ff90d82614: e360 83b8 0004 
+
+  0x000003ff90d8261a: ;   {poll}
+  0x000003ff90d8261a: 916f 6000      
+
+  0x000003ff90d8261e: ;   {metadata(method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark')}
+  0x000003ff90d8261e: c468 ffff ff21 
+
+  0x000003ff90d82624: ;*goto {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@31 (line 13)
+  0x000003ff90d82624: eb01 6160 007a 
+ ;;  block B1 [7, 12]
+  0x000003ff90d8262a: c23d 0000 0400 
+
+  0x000003ff90d82630: ;   {metadata(method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark')}
+  0x000003ff90d82630: c468 ffff ff1c | a779 0150      | a744 0004      | a779 0140      | e3a7 6000 0004 | 41a0 a001      | e3a7 6000 0024 
+ ;;   56 branch [LT]   [B2] 
+  0x000003ff90d82652: ;*if_icmpge {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@12 (line 13)
+  0x000003ff90d82652: a744 ffa8      
+ ;;  block B3 [34, 41]
+  0x000003ff90d82656: e320 f160 0024 
+
+  0x000003ff90d8265c: ;   {metadata(method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark')}
+  0x000003ff90d8265c: c438 ffff ff0a | eb01 3178 007a 
+
+  0x000003ff90d82668: ;   {runtime_call os::javaTimeNanos()}
+  0x000003ff90d82668: 0700           
+
+  0x000003ff90d8266a: ;*invokestatic nanoTime {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@34 (line 17)
+  0x000003ff90d8266a: c0e5 0ffd 76e7 | e330 f160 0004 | b909 0023      | e310 83b8 0004 
+ ;; pop_frame_restore_retPC:
+  0x000003ff90d82680: e3e0 f178 0004 | a7fb 0170      
+
+  0x000003ff90d8268a: ;   {poll_return}
+  0x000003ff90d8268a: 916f 1000      | 07fe           
+ ;; CounterOverflowStub slow case
+  0x000003ff90d82690: ;   {metadata({method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark')}
+  0x000003ff90d82690: c418 ffff fef8 | e310 f018 0024 | e548 f010 ffff | 0700           
+
+  0x000003ff90d826a4: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x000003ff90d826a4: 0700           
+
+  0x000003ff90d826a6: ; ImmutableOopMap {Z_R2=Oop Z_R3=Oop }
+                      ;*synchronization entry
+                      ; - VecOpMicroBenchmark::profile@-1 (line 11)
+  0x000003ff90d826a6: c0e5 03ae 472d | a7f4 ff60      
+ ;; ImplicitNullCheckStub slow case
+  0x000003ff90d826b0: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x000003ff90d826b0: 0700           
+
+  0x000003ff90d826b2: ; ImmutableOopMap {Z_R5=Oop Z_R4=Oop }
+                      ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@21 (line 14)
+  0x000003ff90d826b2: c0e5 03ae 6fa7 
+ ;; stop:  {
+  0x000003ff90d826b8: c028 0000 03ff | c029 b127 1cb2 | c038 0000 03ff | c039 b113 7c52 | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff90d826d8: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff90d826f2: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; RangeCheckStub slow case
+  0x000003ff90d82704: b904 0013      | b904 0004      
+
+  0x000003ff90d8270c: ;   {runtime_call throw_range_check_failed Runtime1 stub}
+  0x000003ff90d8270c: 0700           
+
+  0x000003ff90d8270e: ; ImmutableOopMap {Z_R5=Oop Z_R4=Oop }
+                      ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@21 (line 14)
+  0x000003ff90d8270e: c0e5 03ae 7779 
+ ;; stop:  {
+  0x000003ff90d82714: c028 0000 03ff | c029 b127 1cb2 | c038 0000 03ff | c039 b113 7c52 | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff90d82734: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff90d8274e: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; ImplicitNullCheckStub slow case
+  0x000003ff90d82760: ;   {runtime_call throw_null_pointer_exception Runtime1 stub}
+  0x000003ff90d82760: 0700           
+
+  0x000003ff90d82762: ; ImmutableOopMap {Z_R5=Oop Z_R4=Oop }
+                      ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@25 (line 14)
+  0x000003ff90d82762: c0e5 03ae 6f4f 
+ ;; stop:  {
+  0x000003ff90d82768: c028 0000 03ff | c029 b127 1cb2 | c038 0000 03ff | c039 b113 7c52 | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff90d82788: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff90d827a2: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; RangeCheckStub slow case
+  0x000003ff90d827b4: b904 0013      | b904 0005      
+
+  0x000003ff90d827bc: ;   {runtime_call throw_range_check_failed Runtime1 stub}
+  0x000003ff90d827bc: 0700           
+
+  0x000003ff90d827be: ; ImmutableOopMap {Z_R5=Oop Z_R4=Oop }
+                      ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@25 (line 14)
+  0x000003ff90d827be: c0e5 03ae 7721 
+ ;; stop:  {
+  0x000003ff90d827c4: c028 0000 03ff | c029 b127 1cb2 | c038 0000 03ff | c039 b113 7c52 | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff90d827e4: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff90d827fe: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; CounterOverflowStub slow case
+  0x000003ff90d82810: ;   {metadata({method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark')}
+  0x000003ff90d82810: c418 ffff fe50 | e310 f018 0024 | e548 f010 001f | 0700           
+
+  0x000003ff90d82824: ;   {runtime_call counter_overflow Runtime1 stub}
+  0x000003ff90d82824: 0700           
+
+  0x000003ff90d82826: ; ImmutableOopMap {Z_R5=Oop Z_R4=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) VecOpMicroBenchmark::profile@31 (line 13)
+  0x000003ff90d82826: c0e5 03ae 466d | a7f4 fef4      
+ ;; Unwind handler
+  0x000003ff90d82830: e320 8430 0004 | e548 8430 0000 | e548 8438 0000 
+ ;; pop_frame:
+  0x000003ff90d82842: e3f0 f000 0004 | e330 f008 0004 | a55d 03ff      | c059 9835 2bc0 | 07f5           | 0000           | 0000           | 0000           
+[Exception Handler]
+  0x000003ff90d82860: ;   {no_reloc}
+  0x000003ff90d82860: 0700           | c0e5 03ae 5a4f | c028 0000 03ff | c029 b127 1cb2 | c038 0000 03ff | c039 b113 7c52 
+  0x000003ff90d82880: 0de0           | e3e0 f008 0024 | b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+  0x000003ff90d828a2: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+[Deopt Handler Code]
+  0x000003ff90d828b4: c018 0000 03ff | c019 9840 eec0 | 0de1           | 0000           | 0000           | 0000           
+[/MachCode]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Oops:
+  0x000003ff90d828c8:   0x00000000ffe59380 a 'jdk/internal/loader/ClassLoaders$AppClassLoader'{0x00000000ffe59380}
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Metadata:
+  0x000003ff90d828d0:   0x000003ff784008c0 method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+  0x000003ff90d828d8:   0x000003ff78400520 {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+pc-bytecode offsets:
+PcDesc(pc=0x000003ff90d824ff offset=ffffffff bits=0):
+PcDesc(pc=0x000003ff90d8258c offset=8c bits=0):
+   VecOpMicroBenchmark::profile@0 (line 11)
+PcDesc(pc=0x000003ff90d825a2 offset=a2 bits=0):
+   VecOpMicroBenchmark::profile@7 (line 13)
+PcDesc(pc=0x000003ff90d825bc offset=bc bits=0):
+   VecOpMicroBenchmark::profile@21 (line 14)
+PcDesc(pc=0x000003ff90d825d6 offset=d6 bits=0):
+   VecOpMicroBenchmark::profile@25 (line 14)
+PcDesc(pc=0x000003ff90d825e8 offset=e8 bits=0):
+   VecOpMicroBenchmark::profile@27 (line 14)
+PcDesc(pc=0x000003ff90d82614 offset=114 bits=0):
+   VecOpMicroBenchmark::profile@31 (line 13)
+PcDesc(pc=0x000003ff90d8261a offset=11a bits=1):
+   VecOpMicroBenchmark::profile@31 (line 13)  reexecute=true
+   Locals
+    - l0: reg Z_R5 [10],oop
+    - l1: reg Z_R4 [8],oop
+    - l2: 0
+    - l3: reg Z_R2 [4],long
+    - l4: reg Z_R3 [6],int
+PcDesc(pc=0x000003ff90d8262a offset=12a bits=0):
+   VecOpMicroBenchmark::profile@31 (line 13)
+PcDesc(pc=0x000003ff90d82656 offset=156 bits=0):
+   VecOpMicroBenchmark::profile@12 (line 13)
+PcDesc(pc=0x000003ff90d82670 offset=170 bits=0):
+   VecOpMicroBenchmark::profile@34 (line 17)
+PcDesc(pc=0x000003ff90d826ac offset=1ac bits=0):
+   VecOpMicroBenchmark::profile@-1 (line 11)
+   Locals
+    - l0: reg Z_R2 [4],oop
+    - l1: reg Z_R3 [6],oop
+    - l2: empty
+    - l3: empty
+    - l4: empty
+PcDesc(pc=0x000003ff90d826b8 offset=1b8 bits=0):
+   VecOpMicroBenchmark::profile@21 (line 14)
+   Locals
+    - l0: empty
+    - l1: empty
+    - l2: empty
+    - l3: empty
+    - l4: empty
+PcDesc(pc=0x000003ff90d82714 offset=214 bits=0):
+   VecOpMicroBenchmark::profile@21 (line 14)
+   Locals
+    - l0: empty
+    - l1: empty
+    - l2: empty
+    - l3: empty
+    - l4: empty
+PcDesc(pc=0x000003ff90d82768 offset=268 bits=0):
+   VecOpMicroBenchmark::profile@25 (line 14)
+   Locals
+    - l0: empty
+    - l1: empty
+    - l2: empty
+    - l3: empty
+    - l4: empty
+PcDesc(pc=0x000003ff90d827c4 offset=2c4 bits=0):
+   VecOpMicroBenchmark::profile@25 (line 14)
+   Locals
+    - l0: empty
+    - l1: empty
+    - l2: empty
+    - l3: empty
+    - l4: empty
+PcDesc(pc=0x000003ff90d8282c offset=32c bits=1):
+   VecOpMicroBenchmark::profile@31 (line 13)  reexecute=true
+   Locals
+    - l0: reg Z_R5 [10],oop
+    - l1: reg Z_R4 [8],oop
+    - l2: 0
+    - l3: reg Z_R2 [4],long
+    - l4: reg Z_R3 [6],int
+PcDesc(pc=0x000003ff90d82989 offset=489 bits=0):
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+oop maps:ImmutableOopMapSet contains 7 OopMaps
+
+ImmutableOopMap {Z_R5=Oop Z_R4=Oop } pc offsets: 282 
+ImmutableOopMap {Z_R2=Oop Z_R3=Oop } pc offsets: 428 
+ImmutableOopMap {Z_R5=Oop Z_R4=Oop } pc offsets: 440 532 616 708 812 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+scopes:
+ScopeDesc(pc=0x000003ff90d8258c offset=8c):
+   VecOpMicroBenchmark::profile@0 (line 11)
+ScopeDesc(pc=0x000003ff90d825a2 offset=a2):
+   VecOpMicroBenchmark::profile@7 (line 13)
+ScopeDesc(pc=0x000003ff90d825bc offset=bc):
+   VecOpMicroBenchmark::profile@21 (line 14)
+ScopeDesc(pc=0x000003ff90d825d6 offset=d6):
+   VecOpMicroBenchmark::profile@25 (line 14)
+ScopeDesc(pc=0x000003ff90d825e8 offset=e8):
+   VecOpMicroBenchmark::profile@27 (line 14)
+ScopeDesc(pc=0x000003ff90d82614 offset=114):
+   VecOpMicroBenchmark::profile@31 (line 13)
+ScopeDesc(pc=0x000003ff90d8261a offset=11a):
+   VecOpMicroBenchmark::profile@31 (line 13)  reexecute=true
+   Locals
+    - l0: reg Z_R5 [10],oop
+    - l1: reg Z_R4 [8],oop
+    - l2: 0
+    - l3: reg Z_R2 [4],long
+    - l4: reg Z_R3 [6],int
+ScopeDesc(pc=0x000003ff90d8262a offset=12a):
+   VecOpMicroBenchmark::profile@31 (line 13)
+ScopeDesc(pc=0x000003ff90d82656 offset=156):
+   VecOpMicroBenchmark::profile@12 (line 13)
+ScopeDesc(pc=0x000003ff90d82670 offset=170):
+   VecOpMicroBenchmark::profile@34 (line 17)
+ScopeDesc(pc=0x000003ff90d826ac offset=1ac):
+   VecOpMicroBenchmark::profile@-1 (line 11)
+   Locals
+    - l0: reg Z_R2 [4],oop
+    - l1: reg Z_R3 [6],oop
+    - l2: empty
+    - l3: empty
+    - l4: empty
+ScopeDesc(pc=0x000003ff90d826b8 offset=1b8):
+   VecOpMicroBenchmark::profile@21 (line 14)
+   Locals
+    - l0: empty
+    - l1: empty
+    - l2: empty
+    - l3: empty
+    - l4: empty
+ScopeDesc(pc=0x000003ff90d82714 offset=214):
+   VecOpMicroBenchmark::profile@21 (line 14)
+   Locals
+    - l0: empty
+    - l1: empty
+    - l2: empty
+    - l3: empty
+    - l4: empty
+ScopeDesc(pc=0x000003ff90d82768 offset=268):
+   VecOpMicroBenchmark::profile@25 (line 14)
+   Locals
+    - l0: empty
+    - l1: empty
+    - l2: empty
+    - l3: empty
+    - l4: empty
+ScopeDesc(pc=0x000003ff90d827c4 offset=2c4):
+   VecOpMicroBenchmark::profile@25 (line 14)
+   Locals
+    - l0: empty
+    - l1: empty
+    - l2: empty
+    - l3: empty
+    - l4: empty
+ScopeDesc(pc=0x000003ff90d8282c offset=32c):
+   VecOpMicroBenchmark::profile@31 (line 13)  reexecute=true
+   Locals
+    - l0: reg Z_R5 [10],oop
+    - l1: reg Z_R4 [8],oop
+    - l2: 0
+    - l3: reg Z_R2 [4],long
+    - l4: reg Z_R3 [6],int
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+relocations:
+         @0x000003ff90d82368: 0060
+relocInfo@0x000003ff90d82368 [type=0(none) addr=0x000003ff90d82500 offset=192]
+         @0x000003ff90d8236a: 78016023
+relocInfo@0x000003ff90d8236c [type=12(metadata) addr=0x000003ff90d82546 offset=70 data=1] | [metadata_addr=0x000003ff90d828d0 *=0x000003ff784008c0 offset=0]metadata_value=0x000003ff784008c0: method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+         @0x000003ff90d8236e: 4c00
+relocInfo@0x000003ff90d8236e [type=9(section_word) addr=0x000003ff90d82546 offset=0 format=2] | [target=0x000003ff90d82440]
+         @0x000003ff90d82370: 78016019
+relocInfo@0x000003ff90d82372 [type=12(metadata) addr=0x000003ff90d82578 offset=50 data=1] | [metadata_addr=0x000003ff90d828d0 *=0x000003ff784008c0 offset=0]metadata_value=0x000003ff784008c0: method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+         @0x000003ff90d82374: 7c01fff04c00
+relocInfo@0x000003ff90d82378 [type=9(section_word) addr=0x000003ff90d82578 offset=0 format=2 data=-16] | [target=0x000003ff90d82448]
+         @0x000003ff90d8237a: 78047006
+relocInfo@0x000003ff90d8237c [type=14(runtime_call_w_cp) addr=0x000003ff90d82584 offset=12 data=4] | [destination=0x000003ffb0d31438]
+         @0x000003ff90d8237e: 7c01ffe04c00
+relocInfo@0x000003ff90d82382 [type=9(section_word) addr=0x000003ff90d82584 offset=0 format=2 data=-32] | [target=0x000003ff90d82450]
+         @0x000003ff90d82384: 78016035
+relocInfo@0x000003ff90d82386 [type=12(metadata) addr=0x000003ff90d825ee offset=106 data=1] | [metadata_addr=0x000003ff90d828d0 *=0x000003ff784008c0 offset=0]metadata_value=0x000003ff784008c0: method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+         @0x000003ff90d82388: 7c01ffd04c00
+relocInfo@0x000003ff90d8238c [type=9(section_word) addr=0x000003ff90d825ee offset=0 format=2 data=-48] | [target=0x000003ff90d82458]
+         @0x000003ff90d8238e: 5016
+relocInfo@0x000003ff90d8238e [type=10(poll) addr=0x000003ff90d8261a offset=44]
+         @0x000003ff90d82390: 78016002
+relocInfo@0x000003ff90d82392 [type=12(metadata) addr=0x000003ff90d8261e offset=4 data=1] | [metadata_addr=0x000003ff90d828d0 *=0x000003ff784008c0 offset=0]metadata_value=0x000003ff784008c0: method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+         @0x000003ff90d82394: 7c01ffc04c00
+relocInfo@0x000003ff90d82398 [type=9(section_word) addr=0x000003ff90d8261e offset=0 format=2 data=-64] | [target=0x000003ff90d82460]
+         @0x000003ff90d8239a: 78016009
+relocInfo@0x000003ff90d8239c [type=12(metadata) addr=0x000003ff90d82630 offset=18 data=1] | [metadata_addr=0x000003ff90d828d0 *=0x000003ff784008c0 offset=0]metadata_value=0x000003ff784008c0: method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+         @0x000003ff90d8239e: 7c01ffb04c00
+relocInfo@0x000003ff90d823a2 [type=9(section_word) addr=0x000003ff90d82630 offset=0 format=2 data=-80] | [target=0x000003ff90d82468]
+         @0x000003ff90d823a4: 78016016
+relocInfo@0x000003ff90d823a6 [type=12(metadata) addr=0x000003ff90d8265c offset=44 data=1] | [metadata_addr=0x000003ff90d828d0 *=0x000003ff784008c0 offset=0]metadata_value=0x000003ff784008c0: method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+         @0x000003ff90d823a8: 7c01ffa04c00
+relocInfo@0x000003ff90d823ac [type=9(section_word) addr=0x000003ff90d8265c offset=0 format=2 data=-96] | [target=0x000003ff90d82470]
+         @0x000003ff90d823ae: 780e7006
+relocInfo@0x000003ff90d823b0 [type=14(runtime_call_w_cp) addr=0x000003ff90d82668 offset=12 data=14] | [destination=0x000003ffb0d31438]
+         @0x000003ff90d823b2: 7c01ff904c00
+relocInfo@0x000003ff90d823b6 [type=9(section_word) addr=0x000003ff90d82668 offset=0 format=2 data=-112] | [target=0x000003ff90d82478]
+         @0x000003ff90d823b8: 5811
+relocInfo@0x000003ff90d823b8 [type=11(poll_return) addr=0x000003ff90d8268a offset=34]
+         @0x000003ff90d823ba: 78026003
+relocInfo@0x000003ff90d823bc [type=12(metadata) addr=0x000003ff90d82690 offset=6 data=2] | [metadata_addr=0x000003ff90d828d8 *=0x000003ff78400520 offset=0]metadata_value=0x000003ff78400520: {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+         @0x000003ff90d823be: 7c01ff804c00
+relocInfo@0x000003ff90d823c2 [type=9(section_word) addr=0x000003ff90d82690 offset=0 format=2 data=-128] | [target=0x000003ff90d82480]
+         @0x000003ff90d823c4: 7812700a
+relocInfo@0x000003ff90d823c6 [type=14(runtime_call_w_cp) addr=0x000003ff90d826a4 offset=20 data=18] | [destination=0x000003ff9834b500]
+         @0x000003ff90d823c8: 7c01ff704c00
+relocInfo@0x000003ff90d823cc [type=9(section_word) addr=0x000003ff90d826a4 offset=0 format=2 data=-144] | [target=0x000003ff90d82488]
+         @0x000003ff90d823ce: 78147006
+relocInfo@0x000003ff90d823d0 [type=14(runtime_call_w_cp) addr=0x000003ff90d826b0 offset=12 data=20] | [destination=0x000003ff98350600]
+         @0x000003ff90d823d2: 7c01ff604c00
+relocInfo@0x000003ff90d823d6 [type=9(section_word) addr=0x000003ff90d826b0 offset=0 format=2 data=-160] | [target=0x000003ff90d82490]
+         @0x000003ff90d823d8: 7816702e
+relocInfo@0x000003ff90d823da [type=14(runtime_call_w_cp) addr=0x000003ff90d8270c offset=92 data=22] | [destination=0x000003ff98351600]
+         @0x000003ff90d823dc: 7c01ff504c00
+relocInfo@0x000003ff90d823e0 [type=9(section_word) addr=0x000003ff90d8270c offset=0 format=2 data=-176] | [target=0x000003ff90d82498]
+         @0x000003ff90d823e2: 7818702a
+relocInfo@0x000003ff90d823e4 [type=14(runtime_call_w_cp) addr=0x000003ff90d82760 offset=84 data=24] | [destination=0x000003ff98350600]
+         @0x000003ff90d823e6: 7c01ff404c00
+relocInfo@0x000003ff90d823ea [type=9(section_word) addr=0x000003ff90d82760 offset=0 format=2 data=-192] | [target=0x000003ff90d824a0]
+         @0x000003ff90d823ec: 781a702e
+relocInfo@0x000003ff90d823ee [type=14(runtime_call_w_cp) addr=0x000003ff90d827bc offset=92 data=26] | [destination=0x000003ff98351600]
+         @0x000003ff90d823f0: 7c01ff304c00
+relocInfo@0x000003ff90d823f4 [type=9(section_word) addr=0x000003ff90d827bc offset=0 format=2 data=-208] | [target=0x000003ff90d824a8]
+         @0x000003ff90d823f6: 7802602a
+relocInfo@0x000003ff90d823f8 [type=12(metadata) addr=0x000003ff90d82810 offset=84 data=2] | [metadata_addr=0x000003ff90d828d8 *=0x000003ff78400520 offset=0]metadata_value=0x000003ff78400520: {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+         @0x000003ff90d823fa: 7c01ff204c00
+relocInfo@0x000003ff90d823fe [type=9(section_word) addr=0x000003ff90d82810 offset=0 format=2 data=-224] | [target=0x000003ff90d824b0]
+         @0x000003ff90d82400: 781e700a
+relocInfo@0x000003ff90d82402 [type=14(runtime_call_w_cp) addr=0x000003ff90d82824 offset=20 data=30] | [destination=0x000003ff9834b500]
+         @0x000003ff90d82404: 7c01ff104c00
+relocInfo@0x000003ff90d82408 [type=9(section_word) addr=0x000003ff90d82824 offset=0 format=2 data=-240] | [target=0x000003ff90d824b8]
+         @0x000003ff90d8240a: 001e
+relocInfo@0x000003ff90d8240a [type=0(none) addr=0x000003ff90d82860 offset=60]
+         @0x000003ff90d8240c: 78207000
+relocInfo@0x000003ff90d8240e [type=14(runtime_call_w_cp) addr=0x000003ff90d82860 offset=0 data=32] | [destination=0x000003ff9834dd00]
+         @0x000003ff90d82410: 7c01ff004c00
+relocInfo@0x000003ff90d82414 [type=9(section_word) addr=0x000003ff90d82860 offset=0 format=2 data=-256] | [target=0x000003ff90d824c0]
+         @0x000003ff90d82416: 0000
+relocInfo@0x000003ff90d82416 [type=0(none) addr=0x000003ff90d82860 offset=0]
+         @0x000003ff90d82418: 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Dependencies:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ExceptionHandlerTable (size = 0 bytes)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ImplicitExceptionTable (size = 2 entries, 20 bytes):
+{
+   < 0x000003ff90d825a2, 0x000003ff90d826b0 > < 0x000003ff90d825bc, 0x000003ff90d82760 > 
+}
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Recorded oops:
+#0: 0x0000000000000000 nullptr-oop
+#1: 0x00000000ffe59380 a 'jdk/internal/loader/ClassLoaders$AppClassLoader'{0x00000000ffe59380}
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Recorded metadata:
+#0: 0x0000000000000000 nullptr-oop
+#1: 0x000003ff784008c0 method data for {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+#2: 0x000003ff78400520 {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+============================= C2-compiled nmethod ==============================
+#r026 Z_R2:Z_R2   : parm 0: rawptr:BotPTR
+#r081 Z_R15+244: old out preserve
+#r080 Z_R15+240: old out preserve
+#r079 Z_R15+236: old out preserve
+#r078 Z_R15+232: old out preserve
+#r077 Z_R15+228: old out preserve
+#r076 Z_R15+224: old out preserve
+#r075 Z_R15+220: old out preserve
+#r074 Z_R15+216: old out preserve
+# -- Old Z_R15 -- Framesize: 216 --
+#r073 Z_R15+212: Fixed slot 1
+#r072 Z_R15+208: Fixed slot 0
+#r133 Z_R15+204: spill
+#r132 Z_R15+200: spill
+#r131 Z_R15+196: spill
+#r130 Z_R15+192: spill
+#r129 Z_R15+188: spill
+#r128 Z_R15+184: spill
+#r127 Z_R15+180: spill
+#r126 Z_R15+176: spill
+#r125 Z_R15+172: spill
+#r124 Z_R15+168: spill
+#r123 Z_R15+164: spill
+#r122 Z_R15+160: spill
+#r121 Z_R15+156: outgoing argument
+#r120 Z_R15+152: outgoing argument
+#r119 Z_R15+148: outgoing argument
+#r118 Z_R15+144: outgoing argument
+#r117 Z_R15+140: outgoing argument
+#r116 Z_R15+136: outgoing argument
+#r115 Z_R15+132: outgoing argument
+#r114 Z_R15+128: outgoing argument
+#r113 Z_R15+124: outgoing argument
+#r112 Z_R15+120: outgoing argument
+#r111 Z_R15+116: outgoing argument
+#r110 Z_R15+112: outgoing argument
+#r109 Z_R15+108: outgoing argument
+#r108 Z_R15+104: outgoing argument
+#r107 Z_R15+100: outgoing argument
+#r106 Z_R15+96: outgoing argument
+#r105 Z_R15+92: outgoing argument
+#r104 Z_R15+88: outgoing argument
+#r103 Z_R15+84: outgoing argument
+#r102 Z_R15+80: outgoing argument
+#r101 Z_R15+76: outgoing argument
+#r100 Z_R15+72: outgoing argument
+#r099 Z_R15+68: outgoing argument
+#r098 Z_R15+64: outgoing argument
+#r097 Z_R15+60: outgoing argument
+#r096 Z_R15+56: outgoing argument
+#r095 Z_R15+52: outgoing argument
+#r094 Z_R15+48: outgoing argument
+#r093 Z_R15+44: outgoing argument
+#r092 Z_R15+40: outgoing argument
+#r091 Z_R15+36: outgoing argument
+#r090 Z_R15+32: outgoing argument
+#r089 Z_R15+28: new out preserve
+#r088 Z_R15+24: new out preserve
+#r087 Z_R15+20: new out preserve
+#r086 Z_R15+16: new out preserve
+#r085 Z_R15+12: new out preserve
+#r084 Z_R15+ 8: new out preserve
+#r083 Z_R15+ 4: new out preserve
+#r082 Z_R15+ 0: new out preserve
+#
+----------------------- MetaData before Compile_id = 8 ------------------------
+{method}
+ - this oop:          0x000003ff78400520
+ - method holder:     'VecOpMicroBenchmark'
+ - constants:         0x000003ff78400060 constant pool [85]/operands[5] {0x000003ff78400060} for 'VecOpMicroBenchmark' cache=0x000003ff784006f0
+ - access:            0xc100000a  private static 
+ - name:              'profile'
+ - signature:         '([F[F)J'
+ - max stack:         6
+ - max locals:        5
+ - size of params:    2
+ - method size:       14
+ - highest level:     3
+ - vtable index:      -2
+ - i2i entry:         0x000003ff982cbb40
+ - adapters:          AHE@0x000003ffa85378e0: 0xbb i2c: 0x000003ff983974c0 c2i: 0x000003ff98397540 c2iUV: 0x000003ff98397500 c2iNCI: 0x000003ff98397578
+ - compiled entry     0x000003ff90d82500
+ - code size:         42
+ - code start:        0x000003ff784004e8
+ - code end (excl):   0x000003ff78400512
+ - method data:       0x000003ff784008c0
+ - checked ex length: 0
+ - linenumber start:  0x000003ff78400512
+ - localvar length:   0
+ - compiled code: nmethod     70    7       3       VecOpMicroBenchmark::profile (42 bytes)
+
+------------------------ OptoAssembly for Compile_id = 8 -----------------------
+#
+#  long/half ( rawptr:BotPTR )
+#
+000     N416: #	out( B1 ) <- BLOCK HEAD IS JUNK  Freq: 1
+000     TA
+
+002     B1: #	out( B32 B2 ) <- BLOCK HEAD IS JUNK  Freq: 1
+002     --- MachPrologNode ---
+	# stack bang
+	push_frame -216
+	nmethod entry barrier
+	
+048     LG      Z_R10,#32[,Z_R2]	 # ptr
+04e     LG      Z_R9,#24[,Z_R2]	 # ptr
+054     L(Y)    Z_R13,#0[,Z_R2]	 #
+058     LG      Z_R6,#8[,Z_R2]	 # long
+        NOP     # pad for alignment (1 nops, 2 bytes)
+060     CALL,runtime leaf 0x000003ffb0e8f388 OSR_migration_end
+        No JVM State Info
+        # 
+074     LTGR    Z_R10, Z_R10	 # ptr
+078     branch_con_short,eq   B32  P=0.001000 C=-1.000000
+
+07c     B2: #	out( B46 B3 ) <- in( B1 )  Freq: 0.999
+07c     LoadNKlass Z_R12,#8[,Z_R10]	 # (klass cOop)
+082     CLFI    Z_R12,narrowklass: precise [float (java/lang/Cloneable,java/io/Serializable): :Constant:exact *	 # (NKlass) compare immediate narrow
+088     branch_con_short,ne   B46  P=0.000001 C=-1.000000
+
+08c     B3: #	out( B4 ) <- in( B2 )  Freq: 0.998999
+08c     LGR     Z_R12,Z_R10	 # MachCopy spill code
+090     # checkcastPP of Z_R12
+
+090     B4: #	out( B47 B5 ) <- in( B3 B32 )  Freq: 0.999999
+090     LoadNKlass Z_R11,#8[,Z_R9]	 # (klass cOop)
+096     NullCheck Z_R9
+
+096     B5: #	out( B46 B6 ) <- in( B4 )  Freq: 0.999998
+096     CLFI    Z_R11,narrowklass: precise [float (java/lang/Cloneable,java/io/Serializable): :Constant:exact *	 # (NKlass) compare immediate narrow
+09c     branch_con_short,ne   B46  P=0.000001 C=-1.000000
+
+0a0     B6: #	out( B48 B7 ) <- in( B5 )  Freq: 0.999997
+0a0     # checkcastPP of Z_R9
+0a0     L(Y)    Z_R3,#12[,Z_R12]	 # range
+0a4     NullCheck Z_R12
+
+0a4     B7: #	out( B31 B8 ) <- in( B6 )  Freq: 0.999996
+0a4     CHI     Z_R13,#1024
+0a8     branch_con_short,ge   B31  P=0.000976 C=2067616.000000
+
+0ac     B8: #	out( B9 ) <- in( B7 )  Freq: 0.99902
+0ac     L(Y)    Z_R4,#12[,Z_R9]	 # range
+0b0     AHIK    Z_R10,Z_R13,#1	 # int  RISC ALU
+0b6     LTR     Z_R10,Z_R10
+0b8     CMoveI,lt   Z_R10,#0
+0c0     LTR     Z_R10,Z_R10
+0c2     CMoveI,lt   Z_R10,#0
+0ca     MinI Z_R7 Z_R10,#1024	 MinI const16 (z196 only)
+
+0d6     B9: #	out( B33 B10 ) <- in( B8 B12 ) Loop( B9-B12 inner pre of N363) Freq: 1.99804
+0d6     CLR     Z_R13,Z_R4	 # unsigned
+0d8     branch_con_short,ge   B33  P=0.000001 C=-1.000000
+
+0dc     B10: #	out( B36 B11 ) <- in( B9 )  Freq: 1.99803
+0dc     LGFR    Z_R11,Z_R13	 # int->long
+0e0     SLLG    Z_R11,Z_R11,#2
+0e6     ALGRK   Z_R10,Z_R9,Z_R11	 # ptr RISC ALU
+0ea     LE(Y)    Z_F14,#16[,Z_R10]
+0ee     CLR     Z_R13,Z_R3	 # unsigned
+0f0     branch_con_short,ge   B36  P=0.000001 C=-1.000000
+
+0f4     B11: #	out( B13 B12 ) <- in( B10 )  Freq: 1.99803
+0f4     AEB      Z_F14,#16[[(Z_R11,Z_R12)]]	 # floatMemory
+0fa     STE(Y)   Z_F14,#16[,Z_R10]	 # float
+0fe     AHIK    Z_R10,Z_R13,#1	 # int  RISC ALU
+104     CR      Z_R10,Z_R7
+106     branch_con_short,ge   B13	 # counted loop end  P=0.500000 C=2067616.000000
+
+10a     B12: #	out( B9 ) <- in( B11 )  Freq: 0.999016
+10a     LGR     Z_R13,Z_R10	 # MachCopy spill code
+10e     BRU     B9
+
+112     B13: #	out( B39 B14 ) <- in( B11 )  Freq: 0.999016
+112     CHI     Z_R4,#1024
+116     LGR     Z_R11,Z_R4	 # MachCopy spill code
+11a     CMoveI,ge   Z_R11,#1024
+122     LGFR    Z_R7,Z_R11	 # int->long
+126     CGFR    Z_R7,Z_R3	 # long/int
+12a     CMoveI,gt   Z_R11,Z_R3
+12e     AHIK    Z_R7,Z_R11,#-7	 # int  RISC ALU
+134     LGFI    Z_R5,#-2147483648	 # (int)
+13a     CR      Z_R11,Z_R7
+13c     CMoveI,lt   Z_R7,Z_R5
+140     CR      Z_R10,Z_R7
+142     branch_con_short,ge   B39  P=0.000001 C=-1.000000
+
+146     B14: #	out( B40 B15 ) <- in( B13 )  Freq: 0.999015
+146     LGR     Z_R11,Z_R10	 # MachCopy spill code
+14a     # castII of Z_R11
+14a     CLR     Z_R11,Z_R4	 # unsigned
+14c     branch_con_short,ge   B40  P=0.000001 C=-1.000000
+
+150     B15: #	out( B41 B16 ) <- in( B14 )  Freq: 0.999014
+150     CLR     Z_R11,Z_R3	 # unsigned
+152     branch_con_short,ge   B41  P=0.000001 C=-1.000000
+
+156     B16: #	out( B42 B17 ) <- in( B15 )  Freq: 0.999013
+156     AHIK    Z_R13,Z_R13,#8	 # int  RISC ALU
+15c     CLR     Z_R13,Z_R3	 # unsigned
+15e     branch_con_short,ge   B42  P=0.000001 C=-1.000000
+
+162     B17: #	out( B43 B18 ) <- in( B16 )  Freq: 0.999012
+162     CLR     Z_R10,Z_R3	 # unsigned
+164     branch_con_short,ge   B43  P=0.000001 C=-1.000000
+
+168     B18: #	out( B44 B19 ) <- in( B17 )  Freq: 0.999011
+168     CLR     Z_R13,Z_R4	 # unsigned
+16a     branch_con_short,ge   B44  P=0.000001 C=-1.000000
+
+16e     B19: #	out( B45 B20 ) <- in( B18 )  Freq: 0.99901
+16e     CLR     Z_R10,Z_R4	 # unsigned
+170     branch_con_short,ge   B45  P=0.000001 C=-1.000000
+
+174     B20: #	out( B22 ) <- in( B19 )  Freq: 0.999009
+174     # Z_THREAD=ThreadLocal
+174     BRU     B22
+
+178     B21: #	out( B22 ) <- in( B24 ) top-of-loop Freq: 1023.05
+178     LG      Z_R6,#160[,SP]	 # MachCopy spill code
+
+17e     B22: #	out( B23 ) <- in( B20 B21 ) Loop( B22-B21 ) Freq: 1024.05
+17e     SRK     Z_R13,Z_R7,Z_R11	 # int  RISC ALU
+182     CR      Z_R7,Z_R11
+184     CMoveI,lt   Z_R13,#0
+18c     CLFI    Z_R13,#8000	 # unsigned
+192     CMoveI,gt   Z_R13,#8000
+19a     ARK     Z_R13,Z_R13,Z_R11	 # int  RISC ALU
+19e     STG     Z_R6,#160[,SP]	 # MachCopy spill code
+
+1a4     B23: #	out( B23 B24 ) <- in( B22 B23 ) Loop( B23-B23 inner main of N158 strip mined) Freq: 1.04971e+06
+1a4     LGFR    Z_R10,Z_R11	 # int->long
+1a8     LGFR    Z_R5,Z_R11	 # int->long
+1ac     SLLG    Z_R6,Z_R10,#2
+1b2     ALGRK   Z_R10,Z_R9,Z_R6	 # ptr RISC ALU
+1b6     ALGRK   Z_R6,Z_R12,Z_R6	 # ptr RISC ALU
+1ba     SLLG    Z_R5,Z_R5,#2
+1c0     ALGRK   Z_R2,Z_R9,Z_R5	 # ptr RISC ALU
+1c4     LE(Y)    Z_F15,#16[,Z_R2]
+1c8     AEB      Z_F15,#16[[(Z_R5,Z_R12)]]	 # floatMemory
+1ce     STE(Y)   Z_F15,#16[,Z_R2]	 # float
+1d2     LE(Y)    Z_F15,#20[,Z_R10]
+1d6     AEB      Z_F15,#20[[,Z_R6]]	 # floatMemory
+1dc     STE(Y)   Z_F15,#20[,Z_R10]	 # float
+1e0     LE(Y)    Z_F15,#24[,Z_R10]
+1e4     AEB      Z_F15,#24[[,Z_R6]]	 # floatMemory
+1ea     STE(Y)   Z_F15,#24[,Z_R10]	 # float
+1ee     LE(Y)    Z_F15,#28[,Z_R10]
+1f2     AEB      Z_F15,#28[[,Z_R6]]	 # floatMemory
+1f8     STE(Y)   Z_F15,#28[,Z_R10]	 # float
+1fc     LE(Y)    Z_F15,#32[,Z_R10]
+200     AEB      Z_F15,#32[[,Z_R6]]	 # floatMemory
+206     STE(Y)   Z_F15,#32[,Z_R10]	 # float
+20a     LE(Y)    Z_F15,#36[,Z_R10]
+20e     AEB      Z_F15,#36[[,Z_R6]]	 # floatMemory
+214     STE(Y)   Z_F15,#36[,Z_R10]	 # float
+218     LE(Y)    Z_F15,#40[,Z_R6]
+21c     AEB      Z_F15,#40[[,Z_R10]]	 # floatMemory
+222     STE(Y)   Z_F15,#40[,Z_R10]	 # float
+226     LE(Y)    Z_F15,#44[,Z_R6]
+22a     AEB      Z_F15,#44[[,Z_R10]]	 # floatMemory
+230     STE(Y)   Z_F15,#44[,Z_R10]	 # float
+234     AHIK    Z_R11,Z_R11,#8	 # int  RISC ALU
+23a     CR      Z_R11,Z_R13
+23c     branch_con_short,lt   B23	 # counted loop end  P=0.999024 C=2067616.000000
+
+240     B24: #	out( B21 B25 ) <- in( B23 )  Freq: 1024.05
+240     LG      Z_R13,#952[,Z_R8]	 # ptr
+246     TM      #0[,Z_R13],#111	 # Safepoint: poll for GC        # VecOpMicroBenchmark::profile @ bci:31 (line 13) L[0]=Z_R12 L[1]=Z_R9 L[2]=Z_R15 + #160 L[3]=_ L[4]=Z_R11
+        # OopMap {Z_R12=Oop Z_R9=Oop off=582/0x246}
+24a     CR      Z_R11,Z_R7
+24c     branch_con_short,lt   B21  P=0.999024 C=2067616.000000
+
+250     B25: #	out( B26 ) <- in( B24 )  Freq: 0.999009
+250     LG      Z_R6,#160[,SP]	 # MachCopy spill code
+
+256     B26: #	out( B31 B27 ) <- in( B39 B25 )  Freq: 0.99901
+256     CHI     Z_R11,#1024
+25a     branch_con_short,ge   B31  P=0.500000 C=-1.000000
+
+25e     B27: #	out( B28 ) <- in( B26 )  Freq: 0.499505
+25e     # castII of Z_R11
+
+25e     B28: #	out( B34 B29 ) <- in( B27 B30 ) Loop( B28-B30 inner post of N363) Freq: 0.999008
+25e     CLR     Z_R11,Z_R4	 # unsigned
+260     branch_con_short,ge   B34  P=0.000001 C=-1.000000
+
+264     B29: #	out( B37 B30 ) <- in( B28 )  Freq: 0.999007
+264     LGFR    Z_R13,Z_R11	 # int->long
+268     SLLG    Z_R13,Z_R13,#2
+26e     ALGRK   Z_R10,Z_R9,Z_R13	 # ptr RISC ALU
+272     LE(Y)    Z_F14,#16[,Z_R10]
+276     CLR     Z_R11,Z_R3	 # unsigned
+278     branch_con_short,ge   B37  P=0.000001 C=-1.000000
+
+27c     B30: #	out( B28 B31 ) <- in( B29 )  Freq: 0.999006
+27c     AEB      Z_F14,#16[[(Z_R13,Z_R12)]]	 # floatMemory
+282     STE(Y)   Z_F14,#16[,Z_R10]	 # float
+286     AHIK    Z_R11,Z_R11,#1	 # int  RISC ALU
+28c     CHI     Z_R11,#1024
+290     branch_con_short,lt   B28	 # counted loop end  P=0.500000 C=2067616.000000
+
+294     B31: #	out( N416 ) <- in( B7 B30 B26 )  Freq: 0.999984
+294     CALL,runtime leaf 0x000003ffb0d31438 nanoTime
+        No JVM State Info
+        # 
+2a8     SGRK    Z_R2,Z_R2,Z_R6	 # int  RISC ALU
+2ac     epilog
+	load_from_polling_page Z_R1_scratch
+	
+2c0     BR(Z_R14) // branch to link register
+
+2c2     B32: #	out( B4 ) <- in( B1 )  Freq: 0.000999987
+2c2     XGR     Z_R12,Z_R12	 # NULL ptr
+2c6     BRU     B4
+
+2ca     B33: #	out( B35 ) <- in( B9 )  Freq: 2.02457e-06
+2ca     ST      Z_R13,#160[,SP]	 # MachCopy spill code
+2ce     LGR     Z_R13,Z_R6	 # MachCopy spill code
+2d2     BRU     B35
+
+2d6     B34: #	out( B35 ) <- in( B28 )  Freq: 1.01227e-06
+2d6     ST      Z_R11,#160[,SP]	 # MachCopy spill code
+2da     LGR     Z_R13,Z_R6	 # MachCopy spill code
+
+2de     B35: #	out( N416 ) <- in( B34 B33 )  Freq: 3.03684e-06
+2de     LGHI    Z_R2,#-28	 # (int)
+2e2     STG     Z_R12,#168[,SP]	 # MachCopy spill code
+2e8     STG     Z_R13,#184[,SP]	 # MachCopy spill code
+2ee     STG     Z_R9,#192[,SP]	 # MachCopy spill code
+2f4     STG     Z_R9,#200[,SP]	 # MachCopy spill code
+        NOP     # pad for alignment (1 nops, 2 bytes)
+2fc     CALL,static dynTOC 0x000003ff9840f5c0; ==>  wrapper for: uncommon_trap(reason='range_check' action='make_not_entrant')
+        # VecOpMicroBenchmark::profile @ bci:21 (line 14) L[0]=Z_R15 + #168 L[1]=Z_R15 + #192 L[2]=Z_R15 + #184 L[3]=_ L[4]=Z_R15 + #160 STK[0]=Z_R15 + #200 STK[1]=Z_R15 + #160 STK[2]=Z_R15 + #192 STK[3]=Z_R15 + #160
+        # OopMap {[168]=Oop [192]=Oop [200]=Oop off=772/0x304}
+304     ILLTRAP; ShouldNotReachHere
+
+350     B36: #	out( B38 ) <- in( B10 )  Freq: 2.02457e-06
+350     STE      Z_F14,#164[,SP]	 # MachCopy spill code
+354     ST      Z_R13,#160[,SP]	 # MachCopy spill code
+358     LGR     Z_R13,Z_R6	 # MachCopy spill code
+35c     BRU     B38
+
+360     B37: #	out( B38 ) <- in( B29 )  Freq: 1.01227e-06
+360     STE      Z_F14,#164[,SP]	 # MachCopy spill code
+364     ST      Z_R11,#160[,SP]	 # MachCopy spill code
+368     LGR     Z_R13,Z_R6	 # MachCopy spill code
+
+36c     B38: #	out( N416 ) <- in( B37 B36 )  Freq: 3.03684e-06
+36c     LGHI    Z_R2,#-28	 # (int)
+370     STG     Z_R13,#184[,SP]	 # MachCopy spill code
+376     STG     Z_R9,#192[,SP]	 # MachCopy spill code
+37c     STG     Z_R12,#200[,SP]	 # MachCopy spill code
+        NOP     # pad for alignment (1 nops, 2 bytes)
+384     CALL,static dynTOC 0x000003ff9840f5c0; ==>  wrapper for: uncommon_trap(reason='range_check' action='make_not_entrant')
+        # VecOpMicroBenchmark::profile @ bci:25 (line 14) L[0]=Z_R15 + #200 L[1]=Z_R15 + #192 L[2]=Z_R15 + #184 L[3]=_ L[4]=Z_R15 + #160 STK[0]=Z_R15 + #192 STK[1]=Z_R15 + #160 STK[2]=Z_R15 + #164 STK[3]=Z_R15 + #200 STK[4]=Z_R15 + #160
+        # OopMap {[192]=Oop [200]=Oop off=908/0x38c}
+38c     ILLTRAP; ShouldNotReachHere
+
+3d8     B39: #	out( B26 ) <- in( B13 )  Freq: 1.01228e-06
+3d8     LGR     Z_R11,Z_R10	 # MachCopy spill code
+3dc     BRU     B26
+
+3e0     B40: #	out( N416 ) <- in( B14 )  Freq: 1.01228e-06
+3e0     ILLTRAP; ShouldNotReachHere
+
+42c     B41: #	out( N416 ) <- in( B15 )  Freq: 1.01228e-06
+42c     ILLTRAP; ShouldNotReachHere
+
+478     B42: #	out( N416 ) <- in( B16 )  Freq: 1.01228e-06
+478     ILLTRAP; ShouldNotReachHere
+
+4c4     B43: #	out( N416 ) <- in( B17 )  Freq: 1.01228e-06
+4c4     ILLTRAP; ShouldNotReachHere
+
+510     B44: #	out( N416 ) <- in( B18 )  Freq: 1.01228e-06
+510     ILLTRAP; ShouldNotReachHere
+
+55c     B45: #	out( N416 ) <- in( B19 )  Freq: 1.01228e-06
+55c     ILLTRAP; ShouldNotReachHere
+
+5a8     B46: #	out( N416 ) <- in( B2 B5 )  Freq: 1.999e-06
+5a8     STG     Z_R10,#184[,SP]	 # MachCopy spill code
+5ae     LGHI    Z_R2,#-115	 # (int)
+5b2     STG     Z_R9,#160[,SP]	 # MachCopy spill code
+5b8     STG     Z_R6,#168[,SP]	 # MachCopy spill code
+5be     ST      Z_R13,#176[,SP]	 # MachCopy spill code
+        NOP     # pad for alignment (1 nops, 2 bytes)
+5c4     CALL,static dynTOC 0x000003ff9840f5c0; ==>  wrapper for: uncommon_trap(reason='constraint' action='reinterpret')
+        # VecOpMicroBenchmark::profile @ bci:7 (line 13) L[0]=Z_R15 + #184 L[1]=Z_R15 + #160 L[2]=Z_R15 + #168 L[3]=_ L[4]=Z_R15 + #176
+        # OopMap {[160]=Oop [184]=Oop off=1484/0x5cc}
+5cc     ILLTRAP; ShouldNotReachHere
+
+618     B47: #	out( B49 ) <- in( B4 )  Freq: 1.01328e-06
+618     XGR     Z_R11,Z_R11	 # NULL ptr
+61c     STG     Z_R11,#184[,SP]	 # MachCopy spill code
+622     BRU     B49
+
+626     B48: #	out( B49 ) <- in( B6 )  Freq: 1.01328e-06
+626     STG     Z_R9,#184[,SP]	 # MachCopy spill code
+
+62c     B49: #	out( N416 ) <- in( B48 B47 )  Freq: 2.02655e-06
+62c     LGHI    Z_R2,#-66	 # (int)
+630     STG     Z_R12,#160[,SP]	 # MachCopy spill code
+636     STG     Z_R6,#168[,SP]	 # MachCopy spill code
+63c     ST      Z_R13,#176[,SP]	 # MachCopy spill code
+640     CALL,static dynTOC 0x000003ff9840f5c0; ==>  wrapper for: uncommon_trap(reason='profile_predicate' action='maybe_recompile')
+        # VecOpMicroBenchmark::profile @ bci:7 (line 13) L[0]=Z_R15 + #160 L[1]=Z_R15 + #184 L[2]=Z_R15 + #168 L[3]=_ L[4]=Z_R15 + #176
+        # OopMap {[160]=Oop [184]=Oop off=1608/0x648}
+648     ILLTRAP; ShouldNotReachHere
+
+--------------------------------------------------------------------------------
+----------------------------------- Assembly -----------------------------------
+
+Compiled method (c2)      70    8 %     4       VecOpMicroBenchmark::profile @ 7 (42 bytes)
+ total in heap  [0x000003ff98849410,0x000003ff98849fc0] = 2992
+ relocation     [0x000003ff98849568,0x000003ff988495b0] = 72
+ constants      [0x000003ff988495c0,0x000003ff98849600] = 64
+ main code      [0x000003ff98849600,0x000003ff98849c98] = 1688
+ stub code      [0x000003ff98849c98,0x000003ff98849cb8] = 32
+ oops           [0x000003ff98849cb8,0x000003ff98849cc0] = 8
+ metadata       [0x000003ff98849cc0,0x000003ff98849cd0] = 16
+ scopes data    [0x000003ff98849cd0,0x000003ff98849d90] = 192
+ scopes pcs     [0x000003ff98849d90,0x000003ff98849fa0] = 528
+ dependencies   [0x000003ff98849fa0,0x000003ff98849fa8] = 8
+ nul chk table  [0x000003ff98849fa8,0x000003ff98849fc0] = 24
+
+
+[Constant Pool]
+             Address          hex4                    hex8      
+  0x000003ff988495c0:   0x000003ff      0x000003ffb0e8f388      
+  0x000003ff988495c4:   0xb0e8f388                              
+  0x000003ff988495c8:   0x000003ff      0x000003ffb0d31438      
+  0x000003ff988495cc:   0xb0d31438                              
+  0x000003ff988495d0:   0x000003ff      0x000003ff9840f5c0      
+  0x000003ff988495d4:   0x9840f5c0                              
+  0x000003ff988495d8:   0x000003ff      0x000003ff9840f5c0      
+  0x000003ff988495dc:   0x9840f5c0                              
+  0x000003ff988495e0:   0x000003ff      0x000003ff9840f5c0      
+  0x000003ff988495e4:   0x9840f5c0                              
+  0x000003ff988495e8:   0x000003ff      0x000003ff9840f5c0      
+  0x000003ff988495ec:   0x9840f5c0                              
+  0x000003ff988495f0:   0x00000000      0x0000000000000000      
+  0x000003ff988495f4:   0x00000000                              
+  0x000003ff988495f8:   0x00000000      0x0000000000000000      
+  0x000003ff988495fc:   0x00000000                              
+
+[MachCode]
+[Verified Entry Point]
+  # {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+ ;; N416: #	out( B1 ) <- BLOCK HEAD IS JUNK  Freq: 1
+  0x000003ff98849600: ;   {no_reloc}
+  0x000003ff98849600: 0000           
+ ;; B1: #	out( B32 B2 ) <- BLOCK HEAD IS JUNK  Freq: 1
+  0x000003ff98849602: ebde f000 e851 | e3e0 f008 0024 | b904 000f      | a7fb ff28      | e300 f000 0024 | c008 baad babe 
+  0x000003ff98849622: c009 dead beef 
+ ;; nmethod_entry_barrier (nmethod_entry_barrier) {
+  0x000003ff98849628: c018 0000 03ff | c019 9839 b4c0 | e300 8020 0004 | c20d ffff ffff | c0e0 0000 0004 | 0761           
+ ;; } nmethod_entry_barrier (nmethod_entry_barrier)
+  0x000003ff98849648: e3a0 2020 0004 | e390 2018 0004 | 58d0 2000      | e360 2008 0004 | 0700           | c0e0 0000 000a | e3e0 f008 0024 
+  0x000003ff9884966c: ;   {runtime_call SharedRuntime::OSR_migration_end(long*)}
+  0x000003ff9884966c: 0700           | c0e5 0c32 2e8d | b902 00aa      | a784 0125      
+ ;; B2: #	out( B46 B3 ) <- in( B1 )  Freq: 0.999
+  0x000003ff9884967c: e3c0 a008 0016 
+
+  0x000003ff98849682: ;   {metadata({type array float})}
+  0x000003ff98849682: c2cf 0000 2070 | a774 0290      
+ ;; B3: #	out( B4 ) <- in( B2 )  Freq: 0.998999
+  0x000003ff9884968c: b904 00ca      
+ ;; B4: #	out( B47 B5 ) <- in( B3 B32 )  Freq: 0.999999
+  0x000003ff98849690: ; implicit exception: dispatches to 0x000003ff98849c18
+  0x000003ff98849690: e3b0 9008 0016 
+ ;; B5: #	out( B46 B6 ) <- in( B4 )  Freq: 0.999998
+  0x000003ff98849696: ;   {metadata({type array float})}
+  0x000003ff98849696: c2bf 0000 2070 
+
+  0x000003ff9884969c: ;*iload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@7 (line 13)
+  0x000003ff9884969c: a774 0286      
+ ;; B6: #	out( B48 B7 ) <- in( B5 )  Freq: 0.999997
+  0x000003ff988496a0: ; implicit exception: dispatches to 0x000003ff98849c26
+                      ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@25 (line 14)
+  0x000003ff988496a0: 5830 c00c      
+ ;; B7: #	out( B31 B8 ) <- in( B6 )  Freq: 0.999996
+  0x000003ff988496a4: a7de 0400      
+
+  0x000003ff988496a8: ;*if_icmpge {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@12 (line 13)
+  0x000003ff988496a8: a7a4 00f6      
+ ;; B8: #	out( B9 ) <- in( B7 )  Freq: 0.99902
+  0x000003ff988496ac: ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@21 (line 14)
+  0x000003ff988496ac: 5840 900c      | ecad 0001 00d8 | 12aa           | a7a4 0004      | 41a0 0000      | 12aa           | a7a4 0004      | 41a0 0000      | a779 0400      
+  0x000003ff988496ce: a7ae 0400      | b9f2 407a      
+ ;; B9: #	out( B33 B10 ) <- in( B8 B12 ) Loop( B9-B12 inner pre of N363) Freq: 1.99804
+  0x000003ff988496d6: 15d4           | a7a4 00f9      
+ ;; B10: #	out( B36 B11 ) <- in( B9 )  Freq: 1.99803
+  0x000003ff988496dc: b914 00bd      
+
+  0x000003ff988496e0: ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@25 (line 14)
+  0x000003ff988496e0: ebbb 0002 000d | b9ea b0a9      
+
+  0x000003ff988496ea: ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@21 (line 14)
+  0x000003ff988496ea: 78e0 a010      | 15d3           | a7a4 0130      
+ ;; B11: #	out( B13 B12 ) <- in( B10 )  Freq: 1.99803
+  0x000003ff988496f4: edeb c010 000a 
+
+  0x000003ff988496fa: ;*fastore {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@27 (line 14)
+  0x000003ff988496fa: 70e0 a010      
+
+  0x000003ff988496fe: ;*iinc {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@28 (line 13)
+  0x000003ff988496fe: ecad 0001 00d8 | 19a7           
+
+  0x000003ff98849706: ;*if_icmpge {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@12 (line 13)
+  0x000003ff98849706: a7a4 0006      
+ ;; B12: #	out( B9 ) <- in( B11 )  Freq: 0.999016
+  0x000003ff9884970a: b904 00da      | a7f4 ffe4      
+ ;; B13: #	out( B39 B14 ) <- in( B11 )  Freq: 0.999016
+  0x000003ff98849712: a74e 0400      | b904 00b4      | a754 0004      | a7b9 0400      | b914 007b      | b930 0073      | b9e2 20b3      | ec7b fff9 00d8 
+  0x000003ff98849734: c051 8000 0000 | 19b7           | b9e2 5075      | 19a7           | a7a4 014b      
+ ;; B14: #	out( B40 B15 ) <- in( B13 )  Freq: 0.999015
+  0x000003ff98849746: b904 00ba      | 15b4           | a7a4 014a      
+ ;; B15: #	out( B41 B16 ) <- in( B14 )  Freq: 0.999014
+  0x000003ff98849750: 15b3           | a7a4 016d      
+ ;; B16: #	out( B42 B17 ) <- in( B15 )  Freq: 0.999013
+  0x000003ff98849756: ecdd 0008 00d8 | 15d3           | a7a4 018d      
+ ;; B17: #	out( B43 B18 ) <- in( B16 )  Freq: 0.999012
+  0x000003ff98849762: 15a3           | a7a4 01b0      
+ ;; B18: #	out( B44 B19 ) <- in( B17 )  Freq: 0.999011
+  0x000003ff98849768: 15d4           | a7a4 01d3      
+ ;; B19: #	out( B45 B20 ) <- in( B18 )  Freq: 0.99901
+  0x000003ff9884976e: 15a4           
+
+  0x000003ff98849770: ;*goto {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@31 (line 13)
+  0x000003ff98849770: a7a4 01f6      
+ ;; B20: #	out( B22 ) <- in( B19 )  Freq: 0.999009
+  0x000003ff98849774: a7f4 0005      
+ ;; B21: #	out( B22 ) <- in( B24 ) top-of-loop Freq: 1023.05
+  0x000003ff98849778: e360 f0a0 0004 
+ ;; B22: #	out( B23 ) <- in( B20 B21 ) Loop( B22-B21 ) Freq: 1024.05
+  0x000003ff9884977e: b9f9 b0d7      | 197b           | a7a4 0004      | 41d0 0000      | c2df 0000 1f40 | a7d4 0004      | a7d9 1f40      | b9f8 b0dd      
+  0x000003ff9884979e: e360 f0a0 0024 
+ ;; B23: #	out( B23 B24 ) <- in( B22 B23 ) Loop( B23-B23 inner main of N158 strip mined) Freq: 1.04971e+06
+  0x000003ff988497a4: b914 00ab      | b914 005b      | eb6a 0002 000d | b9ea 60a9      | b9ea 606c      
+
+  0x000003ff988497ba: ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@25 (line 14)
+  0x000003ff988497ba: eb55 0002 000d 
+
+  0x000003ff988497c0: ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@21 (line 14)
+  0x000003ff988497c0: b9ea 5029      | 78f0 2010      | edf5 c010 000a | 70f0 2010      | 78f0 a014      | edf0 6014 000a | 70f0 a014      
+  0x000003ff988497e0: 78f0 a018      | edf0 6018 000a | 70f0 a018      | 78f0 a01c      | edf0 601c 000a | 70f0 a01c      | 78f0 a020      
+  0x000003ff98849800: edf0 6020 000a | 70f0 a020      | 78f0 a024      | edf0 6024 000a | 70f0 a024      | 78f0 6028      | edf0 a028 000a 
+  0x000003ff98849822: 70f0 a028      | 78f0 602c      | edf0 a02c 000a 
+
+  0x000003ff98849830: ;*fastore {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@27 (line 14)
+  0x000003ff98849830: 70f0 a02c      
+
+  0x000003ff98849834: ;*iinc {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@28 (line 13)
+  0x000003ff98849834: ecbb 0008 00d8 | 19bd           
+
+  0x000003ff9884983c: ;*goto {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@31 (line 13)
+  0x000003ff9884983c: a754 ffb4      
+ ;; B24: #	out( B21 B25 ) <- in( B23 )  Freq: 1024.05
+  0x000003ff98849840: ; ImmutableOopMap {Z_R12=Oop Z_R9=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) VecOpMicroBenchmark::profile@31 (line 13)
+  0x000003ff98849840: e3d0 83b8 0004 
+
+  0x000003ff98849846: ;*goto {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@31 (line 13)
+                      ;   {poll}
+  0x000003ff98849846: 916f d000      | 19b7           | a754 ff96      
+ ;; B25: #	out( B26 ) <- in( B24 )  Freq: 0.999009
+  0x000003ff98849850: e360 f0a0 0004 
+ ;; B26: #	out( B31 B27 ) <- in( B39 B25 )  Freq: 0.99901
+  0x000003ff98849856: a7be 0400      | a7a4 001d      
+ ;; B27: #	out( B28 ) <- in( B26 )  Freq: 0.499505
+ ;; B28: #	out( B34 B29 ) <- in( B27 B30 ) Loop( B28-B30 inner post of N363) Freq: 0.999008
+  0x000003ff9884985e: 15b4           | a7a4 003b      
+ ;; B29: #	out( B37 B30 ) <- in( B28 )  Freq: 0.999007
+  0x000003ff98849864: b914 00db      
+
+  0x000003ff98849868: ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@25 (line 14)
+  0x000003ff98849868: ebdd 0002 000d | b9ea d0a9      
+
+  0x000003ff98849872: ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@21 (line 14)
+  0x000003ff98849872: 78e0 a010      | 15b3           | a7a4 0074      
+ ;; B30: #	out( B28 B31 ) <- in( B29 )  Freq: 0.999006
+  0x000003ff9884987c: eded c010 000a 
+
+  0x000003ff98849882: ;*fastore {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@27 (line 14)
+  0x000003ff98849882: 70e0 a010      
+
+  0x000003ff98849886: ;*iinc {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@28 (line 13)
+  0x000003ff98849886: ecbb 0001 00d8 | a7be 0400      
+
+  0x000003ff98849890: ;*if_icmpge {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@12 (line 13)
+  0x000003ff98849890: a754 ffe7      
+ ;; B31: #	out( N416 ) <- in( B7 B30 B26 )  Freq: 0.999984
+  0x000003ff98849894: c0e0 0000 000a | e3e0 f008 0024 
+
+  0x000003ff988498a0: ;   {runtime_call os::javaTimeNanos()}
+  0x000003ff988498a0: 0700           
+
+  0x000003ff988498a2: ;*invokestatic nanoTime {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@34 (line 17)
+  0x000003ff988498a2: c0e5 0c27 3dcb 
+
+  0x000003ff988498a8: ;*lsub {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@38 (line 17)
+  0x000003ff988498a8: b9e9 6022      
+ ;; pop_frame_restore_retPC:
+  0x000003ff988498ac: e3e0 f0e0 0004 | a7fb 00d8      | e310 83b8 0004 
+
+  0x000003ff988498bc: ;   {poll_return}
+  0x000003ff988498bc: 916f 1000      | 07fe           
+ ;; B32: #	out( B4 ) <- in( B1 )  Freq: 0.000999987
+  0x000003ff988498c2: b982 00cc      | a7f4 fee5      
+ ;; B33: #	out( B35 ) <- in( B9 )  Freq: 2.02457e-06
+  0x000003ff988498ca: 50d0 f0a0      | b904 00d6      | a7f4 0006      
+ ;; B34: #	out( B35 ) <- in( B28 )  Freq: 1.01227e-06
+  0x000003ff988498d6: 50b0 f0a0      | b904 00d6      
+ ;; B35: #	out( N416 ) <- in( B34 B33 )  Freq: 3.03684e-06
+  0x000003ff988498de: a729 ffe4      | e3c0 f0a8 0024 | e3d0 f0b8 0024 | e390 f0c0 0024 | e390 f0c8 0024 | 0700           
+
+  0x000003ff988498fc: ;   {runtime_call UncommonTrapBlob}
+  0x000003ff988498fc: 0700           
+
+  0x000003ff988498fe: ; ImmutableOopMap {[168]=Oop [192]=Oop [200]=Oop }
+                      ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@21 (line 14)
+  0x000003ff988498fe: c0e5 ffde 2e61 
+ ;; stop: uncommon trap returned which should never happen {
+  0x000003ff98849904: c028 0000 03ff | c029 b121 9eb0 | c038 0000 03ff | c039 b120 1926 | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff98849924: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff9884993e: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           
+
+  0x000003ff9884994e: ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@21 (line 14)
+  0x000003ff9884994e: 0000           
+ ;;  } stop
+ ;; B36: #	out( B38 ) <- in( B10 )  Freq: 2.02457e-06
+  0x000003ff98849950: 70e0 f0a4      | 50d0 f0a0      | b904 00d6      | a7f4 0008      
+ ;; B37: #	out( B38 ) <- in( B29 )  Freq: 1.01227e-06
+  0x000003ff98849960: 70e0 f0a4      | 50b0 f0a0      | b904 00d6      
+ ;; B38: #	out( N416 ) <- in( B37 B36 )  Freq: 3.03684e-06
+  0x000003ff9884996c: a729 ffe4      | e3d0 f0b8 0024 | e390 f0c0 0024 | e3c0 f0c8 0024 | 0700           
+
+  0x000003ff98849984: ;   {runtime_call UncommonTrapBlob}
+  0x000003ff98849984: 0700           
+
+  0x000003ff98849986: ; ImmutableOopMap {[192]=Oop [200]=Oop }
+                      ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@25 (line 14)
+  0x000003ff98849986: c0e5 ffde 2e1d 
+ ;; stop: uncommon trap returned which should never happen {
+  0x000003ff9884998c: c028 0000 03ff | c029 b121 9eb0 | c038 0000 03ff | c039 b120 1926 | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff988499ac: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff988499c6: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           
+
+  0x000003ff988499d6: ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@25 (line 14)
+  0x000003ff988499d6: 0000           
+ ;;  } stop
+ ;; B39: #	out( B26 ) <- in( B13 )  Freq: 1.01228e-06
+  0x000003ff988499d8: b904 00ba      | a7f4 ff3d      
+ ;; B40: #	out( N416 ) <- in( B14 )  Freq: 1.01228e-06
+ ;; stop: range check predicate failed which is impossible {
+  0x000003ff988499e0: c028 0000 03ff | c029 b121 9eb0 | c038 0000 03ff | c039 b126 696e | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff98849a00: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff98849a1a: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; B41: #	out( N416 ) <- in( B15 )  Freq: 1.01228e-06
+ ;; stop: range check predicate failed which is impossible {
+  0x000003ff98849a2c: c028 0000 03ff | c029 b121 9eb0 | c038 0000 03ff | c039 b126 696e | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff98849a4c: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff98849a66: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; B42: #	out( N416 ) <- in( B16 )  Freq: 1.01228e-06
+ ;; stop: duplicated predicate failed which is impossible {
+  0x000003ff98849a78: c028 0000 03ff | c029 b121 9eb0 | c038 0000 03ff | c039 b126 5bba | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff98849a98: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff98849ab2: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; B43: #	out( N416 ) <- in( B17 )  Freq: 1.01228e-06
+ ;; stop: duplicated predicate failed which is impossible {
+  0x000003ff98849ac4: c028 0000 03ff | c029 b121 9eb0 | c038 0000 03ff | c039 b126 5bba | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff98849ae4: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff98849afe: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; B44: #	out( N416 ) <- in( B18 )  Freq: 1.01228e-06
+ ;; stop: duplicated predicate failed which is impossible {
+  0x000003ff98849b10: c028 0000 03ff | c029 b121 9eb0 | c038 0000 03ff | c039 b126 5bba | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff98849b30: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff98849b4a: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; B45: #	out( N416 ) <- in( B19 )  Freq: 1.01228e-06
+ ;; stop: duplicated predicate failed which is impossible {
+  0x000003ff98849b5c: c028 0000 03ff | c029 b121 9eb0 | c038 0000 03ff | c039 b126 5bba | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff98849b7c: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff98849b96: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; B46: #	out( N416 ) <- in( B2 B5 )  Freq: 1.999e-06
+  0x000003ff98849ba8: e3a0 f0b8 0024 | a729 ff8d      | e390 f0a0 0024 | e360 f0a8 0024 | 50d0 f0b0      | 0700           
+
+  0x000003ff98849bc4: ;   {runtime_call UncommonTrapBlob}
+  0x000003ff98849bc4: 0700           
+
+  0x000003ff98849bc6: ; ImmutableOopMap {[160]=Oop [184]=Oop }
+                      ;*iload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@7 (line 13)
+  0x000003ff98849bc6: c0e5 ffde 2cfd 
+ ;; stop: uncommon trap returned which should never happen {
+  0x000003ff98849bcc: c028 0000 03ff | c029 b121 9eb0 | c038 0000 03ff | c039 b120 1926 | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff98849bec: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff98849c06: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; B47: #	out( B49 ) <- in( B4 )  Freq: 1.01328e-06
+  0x000003ff98849c18: b982 00bb      | e3b0 f0b8 0024 | a7f4 0005      
+ ;; B48: #	out( B49 ) <- in( B6 )  Freq: 1.01328e-06
+  0x000003ff98849c26: e390 f0b8 0024 
+ ;; B49: #	out( N416 ) <- in( B48 B47 )  Freq: 2.02655e-06
+  0x000003ff98849c2c: a729 ffbe      | e3c0 f0a0 0024 | e360 f0a8 0024 | 50d0 f0b0      
+
+  0x000003ff98849c40: ;   {runtime_call UncommonTrapBlob}
+  0x000003ff98849c40: 0700           
+
+  0x000003ff98849c42: ; ImmutableOopMap {[160]=Oop [184]=Oop }
+                      ;*iload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@7 (line 13)
+  0x000003ff98849c42: c0e5 ffde 2cbf 
+ ;; stop: uncommon trap returned which should never happen {
+  0x000003ff98849c48: c028 0000 03ff | c029 b121 9eb0 | c038 0000 03ff | c039 b120 1926 | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff98849c68: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff98849c82: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           
+
+  0x000003ff98849c92: ;*iload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@7 (line 13)
+  0x000003ff98849c92: 0000           
+ ;;  } stop
+  0x000003ff98849c94: 0000           | 0000           
+[Exception Handler]
+  0x000003ff98849c98: a51d 03ff      | c019 9835 1dc0 | 07f1           
+[Deopt Handler Code]
+  0x000003ff98849ca4: c018 0000 03ff | c019 9840 eec0 | 0de1           | 0000           | 0000           | 0000           
+[/MachCode]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Oops:
+  0x000003ff98849cb8:   0x00000000ffe59380 a 'jdk/internal/loader/ClassLoaders$AppClassLoader'{0x00000000ffe59380}
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Metadata:
+  0x000003ff98849cc0:   0x0000000800002070 {type array float}
+  0x000003ff98849cc8:   0x000003ff78400520 {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+pc-bytecode offsets:
+PcDesc(pc=0x000003ff988495ff offset=ffffffff bits=0):
+PcDesc(pc=0x000003ff988496a0 offset=a0 bits=0):
+   VecOpMicroBenchmark::profile@7 (line 13)
+PcDesc(pc=0x000003ff988496a4 offset=a4 bits=0):
+   VecOpMicroBenchmark::profile@25 (line 14)
+PcDesc(pc=0x000003ff988496ac offset=ac bits=0):
+   VecOpMicroBenchmark::profile@12 (line 13)
+PcDesc(pc=0x000003ff988496b0 offset=b0 bits=0):
+   VecOpMicroBenchmark::profile@21 (line 14)
+PcDesc(pc=0x000003ff988496e6 offset=e6 bits=0):
+   VecOpMicroBenchmark::profile@25 (line 14)
+PcDesc(pc=0x000003ff988496ee offset=ee bits=0):
+   VecOpMicroBenchmark::profile@21 (line 14)
+PcDesc(pc=0x000003ff988496fe offset=fe bits=0):
+   VecOpMicroBenchmark::profile@27 (line 14)
+PcDesc(pc=0x000003ff98849704 offset=104 bits=0):
+   VecOpMicroBenchmark::profile@28 (line 13)
+PcDesc(pc=0x000003ff9884970a offset=10a bits=0):
+   VecOpMicroBenchmark::profile@12 (line 13)
+PcDesc(pc=0x000003ff98849774 offset=174 bits=0):
+   VecOpMicroBenchmark::profile@31 (line 13)
+PcDesc(pc=0x000003ff988497c0 offset=1c0 bits=0):
+   VecOpMicroBenchmark::profile@25 (line 14)
+PcDesc(pc=0x000003ff988497c4 offset=1c4 bits=0):
+   VecOpMicroBenchmark::profile@21 (line 14)
+PcDesc(pc=0x000003ff98849834 offset=234 bits=0):
+   VecOpMicroBenchmark::profile@27 (line 14)
+PcDesc(pc=0x000003ff9884983a offset=23a bits=0):
+   VecOpMicroBenchmark::profile@28 (line 13)
+PcDesc(pc=0x000003ff98849840 offset=240 bits=0):
+   VecOpMicroBenchmark::profile@31 (line 13)
+PcDesc(pc=0x000003ff98849846 offset=246 bits=1):
+   VecOpMicroBenchmark::profile@31 (line 13)  reexecute=true
+   Locals
+    - l0: reg Z_R12 [24],oop
+    - l1: reg Z_R9 [18],oop
+    - l2: 0
+    - l3: stack[160],long
+    - l4: reg Z_R11 [22],int
+PcDesc(pc=0x000003ff9884984a offset=24a bits=0):
+   VecOpMicroBenchmark::profile@31 (line 13)
+PcDesc(pc=0x000003ff9884986e offset=26e bits=0):
+   VecOpMicroBenchmark::profile@25 (line 14)
+PcDesc(pc=0x000003ff98849876 offset=276 bits=0):
+   VecOpMicroBenchmark::profile@21 (line 14)
+PcDesc(pc=0x000003ff98849886 offset=286 bits=0):
+   VecOpMicroBenchmark::profile@27 (line 14)
+PcDesc(pc=0x000003ff9884988c offset=28c bits=0):
+   VecOpMicroBenchmark::profile@28 (line 13)
+PcDesc(pc=0x000003ff98849894 offset=294 bits=0):
+   VecOpMicroBenchmark::profile@12 (line 13)
+PcDesc(pc=0x000003ff988498a8 offset=2a8 bits=0):
+   VecOpMicroBenchmark::profile@34 (line 17)
+PcDesc(pc=0x000003ff988498ac offset=2ac bits=0):
+   VecOpMicroBenchmark::profile@38 (line 17)
+PcDesc(pc=0x000003ff98849904 offset=304 bits=0):
+   VecOpMicroBenchmark::profile@21 (line 14)
+   Locals
+    - l0: stack[168],oop
+    - l1: stack[192],oop
+    - l2: 0
+    - l3: stack[184],long
+    - l4: stack[160]
+   Expression stack
+    - @0: stack[200],oop
+    - @1: stack[160]
+    - @2: stack[192],oop
+    - @3: stack[160]
+PcDesc(pc=0x000003ff98849950 offset=350 bits=0):
+   VecOpMicroBenchmark::profile@21 (line 14)
+PcDesc(pc=0x000003ff9884998c offset=38c bits=0):
+   VecOpMicroBenchmark::profile@25 (line 14)
+   Locals
+    - l0: stack[200],oop
+    - l1: stack[192],oop
+    - l2: 0
+    - l3: stack[184],long
+    - l4: stack[160]
+   Expression stack
+    - @0: stack[192],oop
+    - @1: stack[160]
+    - @2: stack[164]
+    - @3: stack[200],oop
+    - @4: stack[160]
+PcDesc(pc=0x000003ff988499d8 offset=3d8 bits=0):
+   VecOpMicroBenchmark::profile@25 (line 14)
+PcDesc(pc=0x000003ff98849bcc offset=5cc bits=0):
+   VecOpMicroBenchmark::profile@7 (line 13)
+   Locals
+    - l0: stack[184],oop
+    - l1: stack[160],oop
+    - l2: 0
+    - l3: stack[168],long
+    - l4: stack[176]
+PcDesc(pc=0x000003ff98849c48 offset=648 bits=0):
+   VecOpMicroBenchmark::profile@7 (line 13)
+   Locals
+    - l0: stack[160],oop
+    - l1: stack[184],oop
+    - l2: 0
+    - l3: stack[168],long
+    - l4: stack[176]
+PcDesc(pc=0x000003ff98849c94 offset=694 bits=0):
+   VecOpMicroBenchmark::profile@7 (line 13)
+PcDesc(pc=0x000003ff98849cf9 offset=6f9 bits=0):
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+oop maps:ImmutableOopMapSet contains 5 OopMaps
+
+ImmutableOopMap {Z_R12=Oop Z_R9=Oop } pc offsets: 582 
+ImmutableOopMap {[168]=Oop [192]=Oop [200]=Oop } pc offsets: 772 
+ImmutableOopMap {[192]=Oop [200]=Oop } pc offsets: 908 
+ImmutableOopMap {[160]=Oop [184]=Oop } pc offsets: 1484 1608 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+scopes:
+ScopeDesc(pc=0x000003ff988496a0 offset=a0):
+   VecOpMicroBenchmark::profile@7 (line 13)
+ScopeDesc(pc=0x000003ff988496a4 offset=a4):
+   VecOpMicroBenchmark::profile@25 (line 14)
+ScopeDesc(pc=0x000003ff988496ac offset=ac):
+   VecOpMicroBenchmark::profile@12 (line 13)
+ScopeDesc(pc=0x000003ff988496b0 offset=b0):
+   VecOpMicroBenchmark::profile@21 (line 14)
+ScopeDesc(pc=0x000003ff988496e6 offset=e6):
+   VecOpMicroBenchmark::profile@25 (line 14)
+ScopeDesc(pc=0x000003ff988496ee offset=ee):
+   VecOpMicroBenchmark::profile@21 (line 14)
+ScopeDesc(pc=0x000003ff988496fe offset=fe):
+   VecOpMicroBenchmark::profile@27 (line 14)
+ScopeDesc(pc=0x000003ff98849704 offset=104):
+   VecOpMicroBenchmark::profile@28 (line 13)
+ScopeDesc(pc=0x000003ff9884970a offset=10a):
+   VecOpMicroBenchmark::profile@12 (line 13)
+ScopeDesc(pc=0x000003ff98849774 offset=174):
+   VecOpMicroBenchmark::profile@31 (line 13)
+ScopeDesc(pc=0x000003ff988497c0 offset=1c0):
+   VecOpMicroBenchmark::profile@25 (line 14)
+ScopeDesc(pc=0x000003ff988497c4 offset=1c4):
+   VecOpMicroBenchmark::profile@21 (line 14)
+ScopeDesc(pc=0x000003ff98849834 offset=234):
+   VecOpMicroBenchmark::profile@27 (line 14)
+ScopeDesc(pc=0x000003ff9884983a offset=23a):
+   VecOpMicroBenchmark::profile@28 (line 13)
+ScopeDesc(pc=0x000003ff98849840 offset=240):
+   VecOpMicroBenchmark::profile@31 (line 13)
+ScopeDesc(pc=0x000003ff98849846 offset=246):
+   VecOpMicroBenchmark::profile@31 (line 13)  reexecute=true
+   Locals
+    - l0: reg Z_R12 [24],oop
+    - l1: reg Z_R9 [18],oop
+    - l2: 0
+    - l3: stack[160],long
+    - l4: reg Z_R11 [22],int
+ScopeDesc(pc=0x000003ff9884984a offset=24a):
+   VecOpMicroBenchmark::profile@31 (line 13)
+ScopeDesc(pc=0x000003ff9884986e offset=26e):
+   VecOpMicroBenchmark::profile@25 (line 14)
+ScopeDesc(pc=0x000003ff98849876 offset=276):
+   VecOpMicroBenchmark::profile@21 (line 14)
+ScopeDesc(pc=0x000003ff98849886 offset=286):
+   VecOpMicroBenchmark::profile@27 (line 14)
+ScopeDesc(pc=0x000003ff9884988c offset=28c):
+   VecOpMicroBenchmark::profile@28 (line 13)
+ScopeDesc(pc=0x000003ff98849894 offset=294):
+   VecOpMicroBenchmark::profile@12 (line 13)
+ScopeDesc(pc=0x000003ff988498a8 offset=2a8):
+   VecOpMicroBenchmark::profile@34 (line 17)
+ScopeDesc(pc=0x000003ff988498ac offset=2ac):
+   VecOpMicroBenchmark::profile@38 (line 17)
+ScopeDesc(pc=0x000003ff98849904 offset=304):
+   VecOpMicroBenchmark::profile@21 (line 14)
+   Locals
+    - l0: stack[168],oop
+    - l1: stack[192],oop
+    - l2: 0
+    - l3: stack[184],long
+    - l4: stack[160]
+   Expression stack
+    - @0: stack[200],oop
+    - @1: stack[160]
+    - @2: stack[192],oop
+    - @3: stack[160]
+ScopeDesc(pc=0x000003ff98849950 offset=350):
+   VecOpMicroBenchmark::profile@21 (line 14)
+ScopeDesc(pc=0x000003ff9884998c offset=38c):
+   VecOpMicroBenchmark::profile@25 (line 14)
+   Locals
+    - l0: stack[200],oop
+    - l1: stack[192],oop
+    - l2: 0
+    - l3: stack[184],long
+    - l4: stack[160]
+   Expression stack
+    - @0: stack[192],oop
+    - @1: stack[160]
+    - @2: stack[164]
+    - @3: stack[200],oop
+    - @4: stack[160]
+ScopeDesc(pc=0x000003ff988499d8 offset=3d8):
+   VecOpMicroBenchmark::profile@25 (line 14)
+ScopeDesc(pc=0x000003ff98849bcc offset=5cc):
+   VecOpMicroBenchmark::profile@7 (line 13)
+   Locals
+    - l0: stack[184],oop
+    - l1: stack[160],oop
+    - l2: 0
+    - l3: stack[168],long
+    - l4: stack[176]
+ScopeDesc(pc=0x000003ff98849c48 offset=648):
+   VecOpMicroBenchmark::profile@7 (line 13)
+   Locals
+    - l0: stack[160],oop
+    - l1: stack[184],oop
+    - l2: 0
+    - l3: stack[168],long
+    - l4: stack[176]
+ScopeDesc(pc=0x000003ff98849c94 offset=694):
+   VecOpMicroBenchmark::profile@7 (line 13)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+relocations:
+         @0x000003ff98849568: 0020
+relocInfo@0x000003ff98849568 [type=0(none) addr=0x000003ff98849600 offset=64]
+         @0x000003ff9884956a: 7036
+relocInfo@0x000003ff9884956a [type=14(runtime_call_w_cp) addr=0x000003ff9884966c offset=108] | [destination=0x000003ffb0e8f388]
+         @0x000003ff9884956c: 4c00
+relocInfo@0x000003ff9884956c [type=9(section_word) addr=0x000003ff9884966c offset=0 format=2] | [target=0x000003ff988495c0]
+         @0x000003ff9884956e: 7801620b
+relocInfo@0x000003ff98849570 [type=12(metadata) addr=0x000003ff98849682 offset=22 format=1 data=1] | [metadata_addr=0x000003ff98849cc0 *=0x0000000800002070 offset=0]metadata_value=0x0000000800002070: {type array float}
+         @0x000003ff98849572: 7801620a
+relocInfo@0x000003ff98849574 [type=12(metadata) addr=0x000003ff98849696 offset=20 format=1 data=1] | [metadata_addr=0x000003ff98849cc0 *=0x0000000800002070 offset=0]metadata_value=0x0000000800002070: {type array float}
+         @0x000003ff98849576: 50d8
+relocInfo@0x000003ff98849576 [type=10(poll) addr=0x000003ff98849846 offset=432]
+         @0x000003ff98849578: 7802702d
+relocInfo@0x000003ff9884957a [type=14(runtime_call_w_cp) addr=0x000003ff988498a0 offset=90 data=2] | [destination=0x000003ffb0d31438]
+         @0x000003ff9884957c: 7c01fff04c00
+relocInfo@0x000003ff98849580 [type=9(section_word) addr=0x000003ff988498a0 offset=0 format=2 data=-16] | [target=0x000003ff988495c8]
+         @0x000003ff98849582: 580e
+relocInfo@0x000003ff98849582 [type=11(poll_return) addr=0x000003ff988498bc offset=28]
+         @0x000003ff98849584: 78047020
+relocInfo@0x000003ff98849586 [type=14(runtime_call_w_cp) addr=0x000003ff988498fc offset=64 data=4] | [destination=0x000003ff9840f5c0]
+         @0x000003ff98849588: 7c01ffe04c00
+relocInfo@0x000003ff9884958c [type=9(section_word) addr=0x000003ff988498fc offset=0 format=2 data=-32] | [target=0x000003ff988495d0]
+         @0x000003ff9884958e: 78067044
+relocInfo@0x000003ff98849590 [type=14(runtime_call_w_cp) addr=0x000003ff98849984 offset=136 data=6] | [destination=0x000003ff9840f5c0]
+         @0x000003ff98849592: 7c01ffd04c00
+relocInfo@0x000003ff98849596 [type=9(section_word) addr=0x000003ff98849984 offset=0 format=2 data=-48] | [target=0x000003ff988495d8]
+         @0x000003ff98849598: 78087120
+relocInfo@0x000003ff9884959a [type=14(runtime_call_w_cp) addr=0x000003ff98849bc4 offset=576 data=8] | [destination=0x000003ff9840f5c0]
+         @0x000003ff9884959c: 7c01ffc04c00
+relocInfo@0x000003ff988495a0 [type=9(section_word) addr=0x000003ff98849bc4 offset=0 format=2 data=-64] | [target=0x000003ff988495e0]
+         @0x000003ff988495a2: 780a703e
+relocInfo@0x000003ff988495a4 [type=14(runtime_call_w_cp) addr=0x000003ff98849c40 offset=124 data=10] | [destination=0x000003ff9840f5c0]
+         @0x000003ff988495a6: 7c01ffb04c00
+relocInfo@0x000003ff988495aa [type=9(section_word) addr=0x000003ff98849c40 offset=0 format=2 data=-80] | [target=0x000003ff988495e8]
+         @0x000003ff988495ac: 0000
+relocInfo@0x000003ff988495ac [type=0(none) addr=0x000003ff98849c40 offset=0]
+         @0x000003ff988495ae: 0000
+relocInfo@0x000003ff988495ae [type=0(none) addr=0x000003ff98849c40 offset=0]
+         @0x000003ff988495b0: 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Dependencies:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ExceptionHandlerTable (size = 0 bytes)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ImplicitExceptionTable (size = 2 entries, 20 bytes):
+{
+   < 0x000003ff98849690, 0x000003ff98849c18 > < 0x000003ff988496a0, 0x000003ff98849c26 > 
+}
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Recorded oops:
+#0: 0x0000000000000000 nullptr-oop
+#1: 0x00000000ffe59380 a 'jdk/internal/loader/ClassLoaders$AppClassLoader'{0x00000000ffe59380}
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Recorded metadata:
+#0: 0x0000000000000000 nullptr-oop
+#1: 0x0000000800002070 {type array float}
+#2: 0x000003ff78400520 {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+============================= C2-compiled nmethod ==============================
+#r026 Z_R2:Z_R2   : parm 0: float[int:>=0] (java/lang/Cloneable,java/io/Serializable):exact *
+#r024 Z_R3:Z_R3   : parm 1: float[int:>=0] (java/lang/Cloneable,java/io/Serializable):exact *
+#r081 Z_R15+220: old out preserve
+#r080 Z_R15+216: old out preserve
+#r079 Z_R15+212: old out preserve
+#r078 Z_R15+208: old out preserve
+#r077 Z_R15+204: old out preserve
+#r076 Z_R15+200: old out preserve
+#r075 Z_R15+196: old out preserve
+#r074 Z_R15+192: old out preserve
+# -- Old Z_R15 -- Framesize: 192 --
+#r073 Z_R15+188: Fixed slot 1
+#r072 Z_R15+184: Fixed slot 0
+#r127 Z_R15+180: spill
+#r126 Z_R15+176: spill
+#r125 Z_R15+172: spill
+#r124 Z_R15+168: spill
+#r123 Z_R15+164: spill
+#r122 Z_R15+160: spill
+#r121 Z_R15+156: outgoing argument
+#r120 Z_R15+152: outgoing argument
+#r119 Z_R15+148: outgoing argument
+#r118 Z_R15+144: outgoing argument
+#r117 Z_R15+140: outgoing argument
+#r116 Z_R15+136: outgoing argument
+#r115 Z_R15+132: outgoing argument
+#r114 Z_R15+128: outgoing argument
+#r113 Z_R15+124: outgoing argument
+#r112 Z_R15+120: outgoing argument
+#r111 Z_R15+116: outgoing argument
+#r110 Z_R15+112: outgoing argument
+#r109 Z_R15+108: outgoing argument
+#r108 Z_R15+104: outgoing argument
+#r107 Z_R15+100: outgoing argument
+#r106 Z_R15+96: outgoing argument
+#r105 Z_R15+92: outgoing argument
+#r104 Z_R15+88: outgoing argument
+#r103 Z_R15+84: outgoing argument
+#r102 Z_R15+80: outgoing argument
+#r101 Z_R15+76: outgoing argument
+#r100 Z_R15+72: outgoing argument
+#r099 Z_R15+68: outgoing argument
+#r098 Z_R15+64: outgoing argument
+#r097 Z_R15+60: outgoing argument
+#r096 Z_R15+56: outgoing argument
+#r095 Z_R15+52: outgoing argument
+#r094 Z_R15+48: outgoing argument
+#r093 Z_R15+44: outgoing argument
+#r092 Z_R15+40: outgoing argument
+#r091 Z_R15+36: outgoing argument
+#r090 Z_R15+32: outgoing argument
+#r089 Z_R15+28: new out preserve
+#r088 Z_R15+24: new out preserve
+#r087 Z_R15+20: new out preserve
+#r086 Z_R15+16: new out preserve
+#r085 Z_R15+12: new out preserve
+#r084 Z_R15+ 8: new out preserve
+#r083 Z_R15+ 4: new out preserve
+#r082 Z_R15+ 0: new out preserve
+#
+----------------------- MetaData before Compile_id = 10 ------------------------
+{method}
+ - this oop:          0x000003ff78400520
+ - method holder:     'VecOpMicroBenchmark'
+ - constants:         0x000003ff78400060 constant pool [85]/operands[5] {0x000003ff78400060} for 'VecOpMicroBenchmark' cache=0x000003ff784006f0
+ - access:            0xc100000a  private static 
+ - name:              'profile'
+ - signature:         '([F[F)J'
+ - max stack:         6
+ - max locals:        5
+ - size of params:    2
+ - method size:       14
+ - highest level:     3
+ - vtable index:      -2
+ - i2i entry:         0x000003ff982cbb40
+ - adapters:          AHE@0x000003ffa85378e0: 0xbb i2c: 0x000003ff983974c0 c2i: 0x000003ff98397540 c2iUV: 0x000003ff98397500 c2iNCI: 0x000003ff98397578
+ - compiled entry     0x000003ff90d82500
+ - code size:         42
+ - code start:        0x000003ff784004e8
+ - code end (excl):   0x000003ff78400512
+ - method data:       0x000003ff784008c0
+ - checked ex length: 0
+ - linenumber start:  0x000003ff78400512
+ - localvar length:   0
+ - compiled code: nmethod     84    7       3       VecOpMicroBenchmark::profile (42 bytes)
+
+------------------------ OptoAssembly for Compile_id = 10 -----------------------
+#
+#  long/half ( float[int:>=0] (java/lang/Cloneable,java/io/Serializable):exact *, float[int:>=0] (java/lang/Cloneable,java/io/Serializable):exact * )
+#
+000     N1: #	out( B1 ) <- in( B21 B19 B18 B17 B24 B27 B26 B25 )  Freq: 1
+
+000     B1: #	out( B21 B2 ) <- BLOCK HEAD IS JUNK  Freq: 1
+000     --- MachPrologNode ---
+	# stack bang
+	push_frame -192
+	nmethod entry barrier
+	
+046     LGR     Z_R12,Z_R2	 # MachCopy spill code
+04a     LGR     Z_R13,Z_R3	 # MachCopy spill code
+        NOP     # pad for alignment (1 nops, 2 bytes)
+050     CALL,runtime leaf 0x000003ffb0d31438 nanoTime
+        No JVM State Info
+        # 
+064     STG     Z_R2,#176[,SP]	 # MachCopy spill code
+06a     LGR     Z_R6,Z_R13	 # MachCopy spill code
+06e     L(Y)    Z_R13,#12[,Z_R13]	 # range
+072     NullCheck Z_R13
+
+072     B2: #	out( B21 B3 ) <- in( B1 )  Freq: 0.999999
+072     CLFI    Z_R13,#0	 # unsigned
+078     branch_con_short,le   B21  P=0.000001 C=-1.000000
+
+07c     B3: #	out( B21 B4 ) <- in( B2 )  Freq: 0.999998
+07c     CLFI    Z_R13,#1023	 # unsigned
+082     branch_con_short,le   B21  P=0.000001 C=-1.000000
+
+086     B4: #	out( B20 B5 ) <- in( B3 )  Freq: 0.999997
+086     LGR     Z_R7,Z_R12	 # MachCopy spill code
+08a     L(Y)    Z_R12,#12[,Z_R12]	 # range
+08e     NullCheck Z_R12
+
+08e     B5: #	out( B22 B6 ) <- in( B4 )  Freq: 0.999996
+08e     CLFI    Z_R12,#0	 # unsigned
+094     branch_con_short,le   B22  P=0.000001 C=-1.000000
+
+098     B6: #	out( B23 B7 ) <- in( B5 )  Freq: 0.999995
+098     CLFI    Z_R12,#1023	 # unsigned
+09e     branch_con_short,le   B23  P=0.000001 C=-1.000000
+
+0a2     B7: #	out( B24 B8 ) <- in( B6 )  Freq: 0.999994
+0a2     CLFI    Z_R12,#1	 # unsigned
+0a8     branch_con_short,le   B24  P=0.000001 C=-1.000000
+
+0ac     B8: #	out( B25 B9 ) <- in( B7 )  Freq: 0.999993
+0ac     CLFI    Z_R13,#1	 # unsigned
+0b2     branch_con_short,le   B25  P=0.000001 C=-1.000000
+
+0b6     B9: #	out( B26 B10 ) <- in( B8 )  Freq: 0.999992
+0b6     CLFI    Z_R13,#8	 # unsigned
+0bc     branch_con_short,le   B26  P=0.000001 C=-1.000000
+
+0c0     B10: #	out( B27 B11 ) <- in( B9 )  Freq: 0.999991
+0c0     CLFI    Z_R12,#8	 # unsigned
+0c6     branch_con_short,le   B27  P=0.000001 C=-1.000000
+
+0ca     B11: #	out( B13 ) <- in( B10 )  Freq: 0.99999
+0ca     LE(Y)    Z_F14,#16[,Z_R6]
+0ce     AEB      Z_F14,#16[[,Z_R7]]	 # floatMemory
+0d4     STE(Y)   Z_F14,#16[,Z_R6]	 # float
+0d8     LGHI    Z_R10,#1	 # (int)
+0dc     BRU     B13
+
+0e0     B12: #	out( B13 ) <- in( B13 ) top-of-loop Freq: 1024.12
+0e0     LGR     Z_R10,Z_R11	 # MachCopy spill code
+
+0e4     B13: #	out( B12 B14 ) <- in( B11 B12 ) Loop( B13-B12 inner main of N61) Freq: 1025.12
+0e4     LGFR    Z_R11,Z_R10	 # int->long
+0e8     SLLG    Z_R11,Z_R11,#2
+0ee     ALGRK   Z_R9,Z_R6,Z_R11	 # ptr RISC ALU
+0f2     ALGRK   Z_R11,Z_R7,Z_R11	 # ptr RISC ALU
+0f6     LE(Y)    Z_F15,#16[,Z_R9]
+0fa     AEB      Z_F15,#16[[,Z_R11]]	 # floatMemory
+100     STE(Y)   Z_F15,#16[,Z_R9]	 # float
+104     LE(Y)    Z_F15,#20[,Z_R9]
+108     AEB      Z_F15,#20[[,Z_R11]]	 # floatMemory
+10e     STE(Y)   Z_F15,#20[,Z_R9]	 # float
+112     LE(Y)    Z_F15,#24[,Z_R11]
+116     AEB      Z_F15,#24[[,Z_R9]]	 # floatMemory
+11c     STE(Y)   Z_F15,#24[,Z_R9]	 # float
+120     LE(Y)    Z_F15,#28[,Z_R11]
+124     AEB      Z_F15,#28[[,Z_R9]]	 # floatMemory
+12a     STE(Y)   Z_F15,#28[,Z_R9]	 # float
+12e     LE(Y)    Z_F15,#32[,Z_R9]
+132     AEB      Z_F15,#32[[,Z_R11]]	 # floatMemory
+138     STE(Y)   Z_F15,#32[,Z_R9]	 # float
+13c     LE(Y)    Z_F15,#36[,Z_R9]
+140     AEB      Z_F15,#36[[,Z_R11]]	 # floatMemory
+146     STE(Y)   Z_F15,#36[,Z_R9]	 # float
+14a     LE(Y)    Z_F15,#40[,Z_R9]
+14e     AEB      Z_F15,#40[[,Z_R11]]	 # floatMemory
+154     STE(Y)   Z_F15,#40[,Z_R9]	 # float
+158     LE(Y)    Z_F15,#44[,Z_R9]
+15c     AEB      Z_F15,#44[[,Z_R11]]	 # floatMemory
+162     STE(Y)   Z_F15,#44[,Z_R9]	 # float
+166     AHIK    Z_R11,Z_R10,#8	 # int  RISC ALU
+16c     CHI     Z_R11,#1017
+170     branch_con_short,lt   B12	 # counted loop end  P=0.999025 C=6729520.000000
+
+174     B14: #	out( B18 B15 ) <- in( B13 )  Freq: 0.99999
+174     # Z_THREAD=ThreadLocal
+174     LG      Z_R5,#952[,Z_R8]	 # ptr
+17a     TM      #0[,Z_R5],#111	 # Safepoint: poll for GC        # VecOpMicroBenchmark::profile @ bci:31 (line 13) L[0]=Z_R7 L[1]=Z_R6 L[2]=Z_R15 + #176 L[3]=_ L[4]=Z_R11
+        # OopMap {Z_R7=Oop Z_R6=Oop off=378/0x17a}
+17e     # castII of Z_R10
+17e     AHIK    Z_R11,Z_R10,#8	 # int  RISC ALU
+184     CLR     Z_R11,Z_R13	 # unsigned
+186     branch_con_short,ge   B18  P=0.000001 C=-1.000000
+
+18a     B15: #	out( B19 B16 ) <- in( B14 )  Freq: 0.999989
+18a     CLR     Z_R11,Z_R12	 # unsigned
+18c     branch_con_short,ge   B19  P=0.000001 C=-1.000000
+
+190     B16: #	out( B16 B17 ) <- in( B15 B16 ) Loop( B16-B16 inner post of N221) Freq: 1.99998
+190     LGFR    Z_R13,Z_R11	 # int->long
+194     SLLG    Z_R13,Z_R13,#2
+19a     ALGRK   Z_R12,Z_R6,Z_R13	 # ptr RISC ALU
+19e     LE(Y)    Z_F15,#16[,Z_R12]
+1a2     AEB      Z_F15,#16[[(Z_R13,Z_R7)]]	 # floatMemory
+1a8     STE(Y)   Z_F15,#16[,Z_R12]	 # float
+1ac     AHIK    Z_R11,Z_R11,#1	 # int  RISC ALU
+1b2     CHI     Z_R11,#1024
+1b6     branch_con_short,lt   B16	 # counted loop end  P=0.500000 C=6729520.000000
+
+1ba     B17: #	out( N1 ) <- in( B16 )  Freq: 0.999988
+        NOP     # pad for alignment (1 nops, 2 bytes)
+1bc     CALL,runtime leaf 0x000003ffb0d31438 nanoTime
+        No JVM State Info
+        # 
+1d0     LG      Z_R13,#176[,SP]	 # MachCopy spill code
+1d6     SGRK    Z_R2,Z_R2,Z_R13	 # int  RISC ALU
+1da     epilog
+	load_from_polling_page Z_R1_scratch
+	
+1ee     BR(Z_R14) // branch to link register
+
+1f0     B18: #	out( N1 ) <- in( B14 )  Freq: 1.01327e-06
+1f0     ILLTRAP; ShouldNotReachHere
+
+23c     B19: #	out( N1 ) <- in( B15 )  Freq: 1.01327e-06
+23c     ILLTRAP; ShouldNotReachHere
+
+288     B20: #	out( B21 ) <- in( B4 )  Freq: 1.01328e-06
+288     LGR     Z_R12,Z_R7	 # MachCopy spill code
+
+28c     B21: #	out( N1 ) <- in( B20 B1 B2 B3 B23 B22 )  Freq: 6.02654e-06
+28c     LGHI    Z_R2,#-138	 # (int)
+290     STG     Z_R12,#160[,SP]	 # MachCopy spill code
+296     STG     Z_R6,#168[,SP]	 # MachCopy spill code
+29c     CALL,static dynTOC 0x000003ff9840f5c0; ==>  wrapper for: uncommon_trap(reason='predicate' action='maybe_recompile')
+        # VecOpMicroBenchmark::profile @ bci:12 (line 13) L[0]=Z_R15 + #160 L[1]=Z_R15 + #168 L[2]=Z_R15 + #176 L[3]=_ L[4]=#0 STK[0]=#0 STK[1]=#1024
+        # OopMap {[160]=Oop [168]=Oop off=676/0x2a4}
+2a4     ILLTRAP; ShouldNotReachHere
+
+2f0     B22: #	out( B21 ) <- in( B5 )  Freq: 9.99996e-07
+2f0     LGR     Z_R12,Z_R7	 # MachCopy spill code
+2f4     BRU     B21
+
+2f8     B23: #	out( B21 ) <- in( B6 )  Freq: 9.99995e-07
+2f8     LGR     Z_R12,Z_R7	 # MachCopy spill code
+2fc     BRU     B21
+
+300     B24: #	out( N1 ) <- in( B7 )  Freq: 9.99994e-07
+300     ILLTRAP; ShouldNotReachHere
+
+34c     B25: #	out( N1 ) <- in( B8 )  Freq: 9.99993e-07
+34c     ILLTRAP; ShouldNotReachHere
+
+398     B26: #	out( N1 ) <- in( B9 )  Freq: 9.99992e-07
+398     ILLTRAP; ShouldNotReachHere
+
+3e4     B27: #	out( N1 ) <- in( B10 )  Freq: 9.99991e-07
+3e4     ILLTRAP; ShouldNotReachHere
+
+--------------------------------------------------------------------------------
+----------------------------------- Assembly -----------------------------------
+
+Compiled method (c2)      84   10       4       VecOpMicroBenchmark::profile (42 bytes)
+ total in heap  [0x000003ff9884a010,0x000003ff9884a8a8] = 2200
+ relocation     [0x000003ff9884a168,0x000003ff9884a188] = 32
+ constants      [0x000003ff9884a1c0,0x000003ff9884a200] = 64
+ main code      [0x000003ff9884a200,0x000003ff9884a630] = 1072
+ stub code      [0x000003ff9884a630,0x000003ff9884a650] = 32
+ oops           [0x000003ff9884a650,0x000003ff9884a658] = 8
+ metadata       [0x000003ff9884a658,0x000003ff9884a660] = 8
+ scopes data    [0x000003ff9884a660,0x000003ff9884a6d8] = 120
+ scopes pcs     [0x000003ff9884a6d8,0x000003ff9884a888] = 432
+ dependencies   [0x000003ff9884a888,0x000003ff9884a890] = 8
+ nul chk table  [0x000003ff9884a890,0x000003ff9884a8a8] = 24
+
+
+[Constant Pool]
+             Address          hex4                    hex8      
+  0x000003ff9884a1c0:   0x000003ff      0x000003ffb0d31438      
+  0x000003ff9884a1c4:   0xb0d31438                              
+  0x000003ff9884a1c8:   0x000003ff      0x000003ffb0d31438      
+  0x000003ff9884a1cc:   0xb0d31438                              
+  0x000003ff9884a1d0:   0x000003ff      0x000003ff9840f5c0      
+  0x000003ff9884a1d4:   0x9840f5c0                              
+  0x000003ff9884a1d8:   0x00000000      0x0000000000000000      
+  0x000003ff9884a1dc:   0x00000000                              
+  0x000003ff9884a1e0:   0x00000000      0x0000000000000000      
+  0x000003ff9884a1e4:   0x00000000                              
+  0x000003ff9884a1e8:   0x00000000      0x0000000000000000      
+  0x000003ff9884a1ec:   0x00000000                              
+  0x000003ff9884a1f0:   0x00000000      0x0000000000000000      
+  0x000003ff9884a1f4:   0x00000000                              
+  0x000003ff9884a1f8:   0x00000000      0x0000000000000000      
+  0x000003ff9884a1fc:   0x00000000                              
+
+[MachCode]
+[Verified Entry Point]
+  # {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+  # parm0:    Z_R2:Z_R2   = '[F'
+  # parm1:    Z_R3:Z_R3   = '[F'
+  #           [sp+0xc0]  (sp of caller)
+ ;; N1: #	out( B1 ) <- in( B21 B19 B18 B17 B24 B27 B26 B25 )  Freq: 1
+ ;; B1: #	out( B21 B2 ) <- BLOCK HEAD IS JUNK  Freq: 1
+  0x000003ff9884a200: ;   {no_reloc}
+  0x000003ff9884a200: ebde f000 e851 | e3e0 f008 0024 | b904 000f      | a7fb ff40      | e300 f000 0024 | c008 baad babe 
+  0x000003ff9884a220: c009 dead beef 
+ ;; nmethod_entry_barrier (nmethod_entry_barrier) {
+  0x000003ff9884a226: c018 0000 03ff | c019 9839 b4c0 | e300 8020 0004 | c20d 0000 0001 | c0e0 0000 0004 
+
+  0x000003ff9884a244: ;*synchronization entry
+                      ; - VecOpMicroBenchmark::profile@-1 (line 11)
+  0x000003ff9884a244: 0761           
+ ;; } nmethod_entry_barrier (nmethod_entry_barrier)
+  0x000003ff9884a246: b904 00c2      | b904 00d3      | 0700           | c0e0 0000 000a | e3e0 f008 0024 
+
+  0x000003ff9884a25c: ;   {runtime_call os::javaTimeNanos()}
+  0x000003ff9884a25c: 0700           
+
+  0x000003ff9884a25e: ;*invokestatic nanoTime {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@0 (line 11)
+  0x000003ff9884a25e: c0e5 0c27 38ed | e320 f0b0 0024 | b904 006d      
+
+  0x000003ff9884a26e: ; implicit exception: dispatches to 0x000003ff9884a48c
+                      ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@21 (line 14)
+  0x000003ff9884a26e: 58d0 d00c      
+ ;; B2: #	out( B21 B3 ) <- in( B1 )  Freq: 0.999999
+  0x000003ff9884a272: c2df 0000 0000 | a7d4 010a      
+ ;; B3: #	out( B21 B4 ) <- in( B2 )  Freq: 0.999998
+  0x000003ff9884a27c: c2df 0000 03ff | a7d4 0105      
+ ;; B4: #	out( B20 B5 ) <- in( B3 )  Freq: 0.999997
+  0x000003ff9884a286: b904 007c      
+
+  0x000003ff9884a28a: ; implicit exception: dispatches to 0x000003ff9884a488
+                      ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@25 (line 14)
+  0x000003ff9884a28a: 58c0 c00c      
+ ;; B5: #	out( B22 B6 ) <- in( B4 )  Freq: 0.999996
+  0x000003ff9884a28e: c2cf 0000 0000 | a7d4 012e      
+ ;; B6: #	out( B23 B7 ) <- in( B5 )  Freq: 0.999995
+  0x000003ff9884a298: c2cf 0000 03ff | a7d4 012d      
+ ;; B7: #	out( B24 B8 ) <- in( B6 )  Freq: 0.999994
+  0x000003ff9884a2a2: c2cf 0000 0001 | a7d4 012c      
+ ;; B8: #	out( B25 B9 ) <- in( B7 )  Freq: 0.999993
+  0x000003ff9884a2ac: c2df 0000 0001 | a7d4 014d      
+ ;; B9: #	out( B26 B10 ) <- in( B8 )  Freq: 0.999992
+  0x000003ff9884a2b6: c2df 0000 0008 | a7d4 016e      
+ ;; B10: #	out( B27 B11 ) <- in( B9 )  Freq: 0.999991
+  0x000003ff9884a2c0: c2cf 0000 0008 | a7d4 018f      
+ ;; B11: #	out( B13 ) <- in( B10 )  Freq: 0.99999
+  0x000003ff9884a2ca: 78e0 6010      | ede0 7010 000a 
+
+  0x000003ff9884a2d4: ;*fastore {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@27 (line 14)
+  0x000003ff9884a2d4: 70e0 6010      | a7a9 0001      | a7f4 0004      
+ ;; B12: #	out( B13 ) <- in( B13 ) top-of-loop Freq: 1024.12
+  0x000003ff9884a2e0: ;*aload_1 {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@15 (line 14)
+  0x000003ff9884a2e0: b904 00ab      
+ ;; B13: #	out( B12 B14 ) <- in( B11 B12 ) Loop( B13-B12 inner main of N61) Freq: 1025.12
+  0x000003ff9884a2e4: b914 00ba      
+
+  0x000003ff9884a2e8: ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@25 (line 14)
+  0x000003ff9884a2e8: ebbb 0002 000d 
+
+  0x000003ff9884a2ee: ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@21 (line 14)
+  0x000003ff9884a2ee: b9ea b096      
+
+  0x000003ff9884a2f2: ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@25 (line 14)
+  0x000003ff9884a2f2: b9ea b0b7      | 78f0 9010      | edf0 b010 000a | 70f0 9010      | 78f0 9014      | edf0 b014 000a | 70f0 9014      
+  0x000003ff9884a312: 78f0 b018      | edf0 9018 000a | 70f0 9018      | 78f0 b01c      | edf0 901c 000a | 70f0 901c      | 78f0 9020      
+  0x000003ff9884a332: edf0 b020 000a | 70f0 9020      | 78f0 9024      | edf0 b024 000a | 70f0 9024      | 78f0 9028      | edf0 b028 000a 
+  0x000003ff9884a354: 70f0 9028      | 78f0 902c      | edf0 b02c 000a 
+
+  0x000003ff9884a362: ;*fastore {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@27 (line 14)
+  0x000003ff9884a362: 70f0 902c      
+
+  0x000003ff9884a366: ;*iinc {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@28 (line 13)
+  0x000003ff9884a366: ecba 0008 00d8 | a7be 03f9      
+
+  0x000003ff9884a370: ;*goto {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@31 (line 13)
+  0x000003ff9884a370: a754 ffb8      
+ ;; B14: #	out( B18 B15 ) <- in( B13 )  Freq: 0.99999
+  0x000003ff9884a374: ; ImmutableOopMap {Z_R7=Oop Z_R6=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) VecOpMicroBenchmark::profile@31 (line 13)
+  0x000003ff9884a374: e350 83b8 0004 
+
+  0x000003ff9884a37a: ;*goto {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@31 (line 13)
+                      ;   {poll}
+  0x000003ff9884a37a: 916f 5000      | ecba 0008 00d8 | 15bd           | a7a4 0035      
+ ;; B15: #	out( B19 B16 ) <- in( B14 )  Freq: 0.999989
+  0x000003ff9884a38a: 15bc           
+
+  0x000003ff9884a38c: ;*aload_1 {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@15 (line 14)
+  0x000003ff9884a38c: a7a4 0058      
+ ;; B16: #	out( B16 B17 ) <- in( B15 B16 ) Loop( B16-B16 inner post of N221) Freq: 1.99998
+  0x000003ff9884a390: b914 00db      
+
+  0x000003ff9884a394: ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@25 (line 14)
+  0x000003ff9884a394: ebdd 0002 000d 
+
+  0x000003ff9884a39a: ;*faload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@21 (line 14)
+  0x000003ff9884a39a: b9ea d0c6      | 78f0 c010      | edfd 7010 000a 
+
+  0x000003ff9884a3a8: ;*fastore {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@27 (line 14)
+  0x000003ff9884a3a8: 70f0 c010      
+
+  0x000003ff9884a3ac: ;*iinc {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@28 (line 13)
+  0x000003ff9884a3ac: ecbb 0001 00d8 | a7be 0400      
+
+  0x000003ff9884a3b6: ;*if_icmpge {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@12 (line 13)
+  0x000003ff9884a3b6: a754 ffed      
+ ;; B17: #	out( N1 ) <- in( B16 )  Freq: 0.999988
+  0x000003ff9884a3ba: 0700           | c0e0 0000 000a | e3e0 f008 0024 
+
+  0x000003ff9884a3c8: ;   {runtime_call os::javaTimeNanos()}
+  0x000003ff9884a3c8: 0700           
+
+  0x000003ff9884a3ca: ;*invokestatic nanoTime {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@34 (line 17)
+  0x000003ff9884a3ca: c0e5 0c27 3837 | e3d0 f0b0 0004 
+
+  0x000003ff9884a3d6: ;*lsub {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@38 (line 17)
+  0x000003ff9884a3d6: b9e9 d022      
+ ;; pop_frame_restore_retPC:
+  0x000003ff9884a3da: e3e0 f0c8 0004 | a7fb 00c0      | e310 83b8 0004 
+
+  0x000003ff9884a3ea: ;   {poll_return}
+  0x000003ff9884a3ea: 916f 1000      | 07fe           
+ ;; B18: #	out( N1 ) <- in( B14 )  Freq: 1.01327e-06
+ ;; stop: duplicated predicate failed which is impossible {
+  0x000003ff9884a3f0: c028 0000 03ff | c029 b121 9eb0 | c038 0000 03ff | c039 b126 5bba | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff9884a410: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff9884a42a: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; B19: #	out( N1 ) <- in( B15 )  Freq: 1.01327e-06
+ ;; stop: duplicated predicate failed which is impossible {
+  0x000003ff9884a43c: c028 0000 03ff | c029 b121 9eb0 | c038 0000 03ff | c039 b126 5bba | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff9884a45c: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff9884a476: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; B20: #	out( B21 ) <- in( B4 )  Freq: 1.01328e-06
+  0x000003ff9884a488: ;*if_icmpge {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@12 (line 13)
+  0x000003ff9884a488: b904 00c7      
+ ;; B21: #	out( N1 ) <- in( B20 B1 B2 B3 B23 B22 )  Freq: 6.02654e-06
+  0x000003ff9884a48c: a729 ff76      | e3c0 f0a0 0024 | e360 f0a8 0024 
+
+  0x000003ff9884a49c: ;   {runtime_call UncommonTrapBlob}
+  0x000003ff9884a49c: 0700           
+
+  0x000003ff9884a49e: ; ImmutableOopMap {[160]=Oop [168]=Oop }
+                      ;*if_icmpge {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) VecOpMicroBenchmark::profile@12 (line 13)
+  0x000003ff9884a49e: c0e5 ffde 2891 
+ ;; stop: uncommon trap returned which should never happen {
+  0x000003ff9884a4a4: c028 0000 03ff | c029 b121 9eb0 | c038 0000 03ff | c039 b120 1926 | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff9884a4c4: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff9884a4de: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           
+
+  0x000003ff9884a4ee: ;*if_icmpge {reexecute=0 rethrow=0 return_oop=0}
+                      ; - VecOpMicroBenchmark::profile@12 (line 13)
+  0x000003ff9884a4ee: 0000           
+ ;;  } stop
+ ;; B22: #	out( B21 ) <- in( B5 )  Freq: 9.99996e-07
+  0x000003ff9884a4f0: b904 00c7      | a7f4 ffcc      
+ ;; B23: #	out( B21 ) <- in( B6 )  Freq: 9.99995e-07
+  0x000003ff9884a4f8: b904 00c7      | a7f4 ffc8      
+ ;; B24: #	out( N1 ) <- in( B7 )  Freq: 9.99994e-07
+ ;; stop: duplicated predicate failed which is impossible {
+  0x000003ff9884a500: c028 0000 03ff | c029 b121 9eb0 | c038 0000 03ff | c039 b126 5bba | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff9884a520: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff9884a53a: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; B25: #	out( N1 ) <- in( B8 )  Freq: 9.99993e-07
+ ;; stop: duplicated predicate failed which is impossible {
+  0x000003ff9884a54c: c028 0000 03ff | c029 b121 9eb0 | c038 0000 03ff | c039 b126 5bba | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff9884a56c: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff9884a586: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; B26: #	out( N1 ) <- in( B9 )  Freq: 9.99992e-07
+ ;; stop: duplicated predicate failed which is impossible {
+  0x000003ff9884a598: c028 0000 03ff | c029 b121 9eb0 | c038 0000 03ff | c039 b126 5bba | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff9884a5b8: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff9884a5d2: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+ ;;  } stop
+ ;; B27: #	out( N1 ) <- in( B10 )  Freq: 9.99991e-07
+ ;; stop: duplicated predicate failed which is impossible {
+  0x000003ff9884a5e4: c028 0000 03ff | c029 b121 9eb0 | c038 0000 03ff | c039 b126 5bba | 0de0           | e3e0 f008 0024 
+ ;; push_frame_abi160 {
+  0x000003ff9884a604: b904 000f      | a7fb ff60      | e300 f000 0024 | c008 baad babe | c009 dead beef 
+ ;; } push_frame_abi160
+  0x000003ff9884a61e: c018 0000 03ff | c019 b0b8 39a0 | 0de1           | 0000           | 0000           
+[Exception Handler]
+ ;;  } stop
+  0x000003ff9884a630: a51d 03ff      | c019 9835 1dc0 | 07f1           
+[Deopt Handler Code]
+  0x000003ff9884a63c: c018 0000 03ff | c019 9840 eec0 | 0de1           | 0000           | 0000           | 0000           
+[/MachCode]
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Oops:
+  0x000003ff9884a650:   0x00000000ffe59380 a 'jdk/internal/loader/ClassLoaders$AppClassLoader'{0x00000000ffe59380}
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Metadata:
+  0x000003ff9884a658:   0x000003ff78400520 {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+pc-bytecode offsets:
+PcDesc(pc=0x000003ff9884a1ff offset=ffffffff bits=0):
+PcDesc(pc=0x000003ff9884a246 offset=46 bits=0):
+   VecOpMicroBenchmark::profile@-1 (line 11)
+PcDesc(pc=0x000003ff9884a264 offset=64 bits=0):
+   VecOpMicroBenchmark::profile@0 (line 11)
+PcDesc(pc=0x000003ff9884a272 offset=72 bits=0):
+   VecOpMicroBenchmark::profile@21 (line 14)
+PcDesc(pc=0x000003ff9884a28e offset=8e bits=0):
+   VecOpMicroBenchmark::profile@25 (line 14)
+PcDesc(pc=0x000003ff9884a2d8 offset=d8 bits=0):
+   VecOpMicroBenchmark::profile@27 (line 14)
+PcDesc(pc=0x000003ff9884a2e4 offset=e4 bits=0):
+   VecOpMicroBenchmark::profile@15 (line 14)
+PcDesc(pc=0x000003ff9884a2ee offset=ee bits=0):
+   VecOpMicroBenchmark::profile@25 (line 14)
+PcDesc(pc=0x000003ff9884a2f2 offset=f2 bits=0):
+   VecOpMicroBenchmark::profile@21 (line 14)
+PcDesc(pc=0x000003ff9884a2f6 offset=f6 bits=0):
+   VecOpMicroBenchmark::profile@25 (line 14)
+PcDesc(pc=0x000003ff9884a366 offset=166 bits=0):
+   VecOpMicroBenchmark::profile@27 (line 14)
+PcDesc(pc=0x000003ff9884a36c offset=16c bits=0):
+   VecOpMicroBenchmark::profile@28 (line 13)
+PcDesc(pc=0x000003ff9884a374 offset=174 bits=0):
+   VecOpMicroBenchmark::profile@31 (line 13)
+PcDesc(pc=0x000003ff9884a37a offset=17a bits=1):
+   VecOpMicroBenchmark::profile@31 (line 13)  reexecute=true
+   Locals
+    - l0: reg Z_R7 [14],oop
+    - l1: reg Z_R6 [12],oop
+    - l2: 0
+    - l3: stack[176],long
+    - l4: reg Z_R11 [22],int
+PcDesc(pc=0x000003ff9884a37e offset=17e bits=0):
+   VecOpMicroBenchmark::profile@31 (line 13)
+PcDesc(pc=0x000003ff9884a390 offset=190 bits=0):
+   VecOpMicroBenchmark::profile@15 (line 14)
+PcDesc(pc=0x000003ff9884a39a offset=19a bits=0):
+   VecOpMicroBenchmark::profile@25 (line 14)
+PcDesc(pc=0x000003ff9884a39e offset=19e bits=0):
+   VecOpMicroBenchmark::profile@21 (line 14)
+PcDesc(pc=0x000003ff9884a3ac offset=1ac bits=0):
+   VecOpMicroBenchmark::profile@27 (line 14)
+PcDesc(pc=0x000003ff9884a3b2 offset=1b2 bits=0):
+   VecOpMicroBenchmark::profile@28 (line 13)
+PcDesc(pc=0x000003ff9884a3ba offset=1ba bits=0):
+   VecOpMicroBenchmark::profile@12 (line 13)
+PcDesc(pc=0x000003ff9884a3d0 offset=1d0 bits=0):
+   VecOpMicroBenchmark::profile@34 (line 17)
+PcDesc(pc=0x000003ff9884a3da offset=1da bits=0):
+   VecOpMicroBenchmark::profile@38 (line 17)
+PcDesc(pc=0x000003ff9884a48c offset=28c bits=0):
+   VecOpMicroBenchmark::profile@12 (line 13)
+PcDesc(pc=0x000003ff9884a4a4 offset=2a4 bits=1):
+   VecOpMicroBenchmark::profile@12 (line 13)  reexecute=true
+   Locals
+    - l0: stack[160],oop
+    - l1: stack[168],oop
+    - l2: 0
+    - l3: stack[176],long
+    - l4: 0
+   Expression stack
+    - @0: 0
+    - @1: 1024
+PcDesc(pc=0x000003ff9884a4f0 offset=2f0 bits=0):
+   VecOpMicroBenchmark::profile@12 (line 13)
+PcDesc(pc=0x000003ff9884a691 offset=491 bits=0):
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+oop maps:ImmutableOopMapSet contains 2 OopMaps
+
+ImmutableOopMap {Z_R7=Oop Z_R6=Oop } pc offsets: 378 
+ImmutableOopMap {[160]=Oop [168]=Oop } pc offsets: 676 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+scopes:
+ScopeDesc(pc=0x000003ff9884a246 offset=46):
+   VecOpMicroBenchmark::profile@-1 (line 11)
+ScopeDesc(pc=0x000003ff9884a264 offset=64):
+   VecOpMicroBenchmark::profile@0 (line 11)
+ScopeDesc(pc=0x000003ff9884a272 offset=72):
+   VecOpMicroBenchmark::profile@21 (line 14)
+ScopeDesc(pc=0x000003ff9884a28e offset=8e):
+   VecOpMicroBenchmark::profile@25 (line 14)
+ScopeDesc(pc=0x000003ff9884a2d8 offset=d8):
+   VecOpMicroBenchmark::profile@27 (line 14)
+ScopeDesc(pc=0x000003ff9884a2e4 offset=e4):
+   VecOpMicroBenchmark::profile@15 (line 14)
+ScopeDesc(pc=0x000003ff9884a2ee offset=ee):
+   VecOpMicroBenchmark::profile@25 (line 14)
+ScopeDesc(pc=0x000003ff9884a2f2 offset=f2):
+   VecOpMicroBenchmark::profile@21 (line 14)
+ScopeDesc(pc=0x000003ff9884a2f6 offset=f6):
+   VecOpMicroBenchmark::profile@25 (line 14)
+ScopeDesc(pc=0x000003ff9884a366 offset=166):
+   VecOpMicroBenchmark::profile@27 (line 14)
+ScopeDesc(pc=0x000003ff9884a36c offset=16c):
+   VecOpMicroBenchmark::profile@28 (line 13)
+ScopeDesc(pc=0x000003ff9884a374 offset=174):
+   VecOpMicroBenchmark::profile@31 (line 13)
+ScopeDesc(pc=0x000003ff9884a37a offset=17a):
+   VecOpMicroBenchmark::profile@31 (line 13)  reexecute=true
+   Locals
+    - l0: reg Z_R7 [14],oop
+    - l1: reg Z_R6 [12],oop
+    - l2: 0
+    - l3: stack[176],long
+    - l4: reg Z_R11 [22],int
+ScopeDesc(pc=0x000003ff9884a37e offset=17e):
+   VecOpMicroBenchmark::profile@31 (line 13)
+ScopeDesc(pc=0x000003ff9884a390 offset=190):
+   VecOpMicroBenchmark::profile@15 (line 14)
+ScopeDesc(pc=0x000003ff9884a39a offset=19a):
+   VecOpMicroBenchmark::profile@25 (line 14)
+ScopeDesc(pc=0x000003ff9884a39e offset=19e):
+   VecOpMicroBenchmark::profile@21 (line 14)
+ScopeDesc(pc=0x000003ff9884a3ac offset=1ac):
+   VecOpMicroBenchmark::profile@27 (line 14)
+ScopeDesc(pc=0x000003ff9884a3b2 offset=1b2):
+   VecOpMicroBenchmark::profile@28 (line 13)
+ScopeDesc(pc=0x000003ff9884a3ba offset=1ba):
+   VecOpMicroBenchmark::profile@12 (line 13)
+ScopeDesc(pc=0x000003ff9884a3d0 offset=1d0):
+   VecOpMicroBenchmark::profile@34 (line 17)
+ScopeDesc(pc=0x000003ff9884a3da offset=1da):
+   VecOpMicroBenchmark::profile@38 (line 17)
+ScopeDesc(pc=0x000003ff9884a48c offset=28c):
+   VecOpMicroBenchmark::profile@12 (line 13)
+ScopeDesc(pc=0x000003ff9884a4a4 offset=2a4):
+   VecOpMicroBenchmark::profile@12 (line 13)  reexecute=true
+   Locals
+    - l0: stack[160],oop
+    - l1: stack[168],oop
+    - l2: 0
+    - l3: stack[176],long
+    - l4: 0
+   Expression stack
+    - @0: 0
+    - @1: 1024
+ScopeDesc(pc=0x000003ff9884a4f0 offset=2f0):
+   VecOpMicroBenchmark::profile@12 (line 13)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+relocations:
+         @0x000003ff9884a168: 0020
+relocInfo@0x000003ff9884a168 [type=0(none) addr=0x000003ff9884a200 offset=64]
+         @0x000003ff9884a16a: 702e
+relocInfo@0x000003ff9884a16a [type=14(runtime_call_w_cp) addr=0x000003ff9884a25c offset=92] | [destination=0x000003ffb0d31438]
+         @0x000003ff9884a16c: 4c00
+relocInfo@0x000003ff9884a16c [type=9(section_word) addr=0x000003ff9884a25c offset=0 format=2] | [target=0x000003ff9884a1c0]
+         @0x000003ff9884a16e: 508f
+relocInfo@0x000003ff9884a16e [type=10(poll) addr=0x000003ff9884a37a offset=286]
+         @0x000003ff9884a170: 78027027
+relocInfo@0x000003ff9884a172 [type=14(runtime_call_w_cp) addr=0x000003ff9884a3c8 offset=78 data=2] | [destination=0x000003ffb0d31438]
+         @0x000003ff9884a174: 7c01fff04c00
+relocInfo@0x000003ff9884a178 [type=9(section_word) addr=0x000003ff9884a3c8 offset=0 format=2 data=-16] | [target=0x000003ff9884a1c8]
+         @0x000003ff9884a17a: 5811
+relocInfo@0x000003ff9884a17a [type=11(poll_return) addr=0x000003ff9884a3ea offset=34]
+         @0x000003ff9884a17c: 78047059
+relocInfo@0x000003ff9884a17e [type=14(runtime_call_w_cp) addr=0x000003ff9884a49c offset=178 data=4] | [destination=0x000003ff9840f5c0]
+         @0x000003ff9884a180: 7c01ffe04c00
+relocInfo@0x000003ff9884a184 [type=9(section_word) addr=0x000003ff9884a49c offset=0 format=2 data=-32] | [target=0x000003ff9884a1d0]
+         @0x000003ff9884a186: 0000
+relocInfo@0x000003ff9884a186 [type=0(none) addr=0x000003ff9884a49c offset=0]
+         @0x000003ff9884a188: 
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Dependencies:
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ExceptionHandlerTable (size = 0 bytes)
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ImplicitExceptionTable (size = 2 entries, 20 bytes):
+{
+   < 0x000003ff9884a26e, 0x000003ff9884a48c > < 0x000003ff9884a28a, 0x000003ff9884a488 > 
+}
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Recorded oops:
+#0: 0x0000000000000000 nullptr-oop
+#1: 0x00000000ffe59380 a 'jdk/internal/loader/ClassLoaders$AppClassLoader'{0x00000000ffe59380}
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Recorded metadata:
+#0: 0x0000000000000000 nullptr-oop
+#1: 0x000003ff78400520 {method} {0x000003ff78400520} 'profile' '([F[F)J' in 'VecOpMicroBenchmark'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+duration: 1954ns
+------------------------------------------------------------------------
+static VecOpMicroBenchmark::profile([F[F)J
+  interpreter_invocation_count:        7684
+  invocation_counter:                  7684
+  backedge_counter:                 7868661
+  decompile_count:                        0
+  mdo size: 464 bytes
+
+   0 invokestatic 7 <java/lang/System.nanoTime()J> 
+  0   bci: 0    CounterData         count(7624)
+   3 lstore_2
+   4 iconst_0
+   5 istore #4
+   7 fast_iload #4
+   9 sipush 1024
+  12 if_icmpge 34
+  16  bci: 12   BranchData          taken(7624) displacement(56)
+                                    not taken(7806976)
+  15 aload_1
+  16 fast_iload #4
+  18 aload_1
+  19 fast_iload #4
+  21 faload
+  22 fast_aload_0
+  23 fast_iload #4
+  25 faload
+  26 fadd
+  27 fastore
+  28 iinc #4 1
+  31 goto 7
+  48  bci: 31   JumpData            taken(7806976) displacement(-32)
+  34 invokestatic 7 <java/lang/System.nanoTime()J> 
+  72  bci: 34   CounterData         count(7624)
+  37 lload_2
+  38 lsub
+  39 lstore_2
+  40 lload_2
+  41 lreturn
+------------------------------------------------------------------------
+Total MDO size: 464 bytes
