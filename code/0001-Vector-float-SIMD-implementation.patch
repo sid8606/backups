@@ -1,6 +1,6 @@
-From 48ab226c4cda0dc378c9f8b86b2796342eb83137 Mon Sep 17 00:00:00 2001
-From: Sidraya <sidraya.jayagond@ibm.com>
-Date: Tue, 7 Mar 2023 14:59:42 +0100
+From 4055c6549d3f19a56c60f0519132edb9bf262af4 Mon Sep 17 00:00:00 2001
+From: root <root@t8375027.lnxero1.boe>
+Date: Wed, 8 Mar 2023 16:27:45 +0100
 Subject: [PATCH] Vector-float-SIMD-implementation
 
 ---
@@ -8,15 +8,15 @@ Subject: [PATCH] Vector-float-SIMD-implementation
  .../cpu/s390/assembler_s390.inline.hpp        |   2 +
  src/hotspot/cpu/s390/globals_s390.hpp         |   3 +
  src/hotspot/cpu/s390/registerSaver_s390.hpp   |   2 +
- src/hotspot/cpu/s390/register_s390.cpp        |   5 +-
- src/hotspot/cpu/s390/register_s390.hpp        |  12 +-
- src/hotspot/cpu/s390/s390.ad                  | 144 +++++++++++++++++-
+ src/hotspot/cpu/s390/register_s390.cpp        |   4 +-
+ src/hotspot/cpu/s390/register_s390.hpp        |   5 +-
+ src/hotspot/cpu/s390/s390.ad                  | 128 +++++++++++++++++-
  src/hotspot/cpu/s390/sharedRuntime_s390.cpp   |   2 +-
  src/hotspot/cpu/s390/vm_version_s390.cpp      |   2 +-
  src/hotspot/cpu/s390/vmreg_s390.cpp           |   7 +
  src/hotspot/cpu/s390/vmreg_s390.hpp           |  10 ++
  src/hotspot/cpu/s390/vmreg_s390.inline.hpp    |   7 +-
- 12 files changed, 186 insertions(+), 13 deletions(-)
+ 12 files changed, 165 insertions(+), 10 deletions(-)
 
 diff --git a/src/hotspot/cpu/s390/assembler_s390.hpp b/src/hotspot/cpu/s390/assembler_s390.hpp
 index a0a86a707dd..09a0f1d9b02 100644
@@ -85,52 +85,44 @@ index 97883685384..8f87f3f4d92 100644
  
    // Remember type, number, and VMReg.
 diff --git a/src/hotspot/cpu/s390/register_s390.cpp b/src/hotspot/cpu/s390/register_s390.cpp
-index 853b5642470..2c35e0854a6 100644
+index 853b5642470..242beca59a2 100644
 --- a/src/hotspot/cpu/s390/register_s390.cpp
 +++ b/src/hotspot/cpu/s390/register_s390.cpp
-@@ -26,10 +26,13 @@
+@@ -26,11 +26,11 @@
  #include "precompiled.hpp"
  #include "register_s390.hpp"
  
 -
-+#if 0
  const int ConcreteRegisterImpl::max_gpr = RegisterImpl::number_of_registers * 2;
  const int ConcreteRegisterImpl::max_fpr = ConcreteRegisterImpl::max_gpr +
                                            FloatRegisterImpl::number_of_registers * 2;
+-
 +const int ConcreteRegisterImpl::max_vr = ConcreteRegisterImpl::max_fpr +
 +					  VectorRegisterImpl::number_of_registers;
-+#endif
- 
  const char* RegisterImpl::name() const {
    const char* names[number_of_registers] = {
+     "Z_R0",  "Z_R1",  "Z_R2",  "Z_R3",  "Z_R4",  "Z_R5",  "Z_R6",  "Z_R7",
 diff --git a/src/hotspot/cpu/s390/register_s390.hpp b/src/hotspot/cpu/s390/register_s390.hpp
-index 59da743016f..9b76683eccd 100644
+index 59da743016f..1b532d4ca40 100644
 --- a/src/hotspot/cpu/s390/register_s390.hpp
 +++ b/src/hotspot/cpu/s390/register_s390.hpp
-@@ -473,14 +473,16 @@ CONSTANT_REGISTER_DECLARATION(VectorRegister, Z_V31, (31));
- class ConcreteRegisterImpl : public AbstractRegisterImpl {
-  public:
-   enum {
--    number_of_registers =
--      (RegisterImpl::number_of_registers +
--      FloatRegisterImpl::number_of_registers)
--      * 2 // register halves
+@@ -477,10 +477,13 @@ class ConcreteRegisterImpl : public AbstractRegisterImpl {
+       (RegisterImpl::number_of_registers +
+       FloatRegisterImpl::number_of_registers)
+       * 2 // register halves
 -      + 1 // condition code register
-+	  max_gpr = RegisterImpl::number_of_registers * 2,
-+    	  max_fpr = max_gpr + FloatRegisterImpl::number_of_registers * 2,
-+    	  max_vr = max_fpr + VectorRegisterImpl::number_of_registers,
-+	  number_of_registers = max_vr + 1
++      + VectorRegisterImpl::number_of_registers
++      + 1 // condition code register        
    };
-+#if 0
++
    static const int max_gpr;
    static const int max_fpr;
 +  static const int max_vr;
-+#endif
  };
  
  
 diff --git a/src/hotspot/cpu/s390/s390.ad b/src/hotspot/cpu/s390/s390.ad
-index 1e54b26a554..075153ac50c 100644
+index 1e54b26a554..558f9efd80f 100644
 --- a/src/hotspot/cpu/s390/s390.ad
 +++ b/src/hotspot/cpu/s390/s390.ad
 @@ -194,6 +194,38 @@ register %{
@@ -214,27 +206,11 @@ index 1e54b26a554..075153ac50c 100644
  
  //-------Architecture Description Register Classes-----------------------
  
-@@ -540,6 +607,42 @@ reg_class z_dbl_reg(
+@@ -540,6 +607,26 @@ reg_class z_dbl_reg(
  );
  reg_class z_rscratch1_dbl_reg(Z_F1,Z_F1_H);
  
 +reg_class z_v_reg(
-+ Z_V0,
-+ Z_V1,
-+ Z_V2,
-+ Z_V3,
-+ Z_V4,
-+ Z_V5,
-+ Z_V6,
-+ Z_V7,
-+ Z_V8,
-+ Z_V9,
-+ Z_V10,
-+ Z_V11,
-+ Z_V12,
-+ Z_V13,
-+ Z_V14,
-+ Z_V15,
 + Z_V16,
 + Z_V17,
 + Z_V18,
@@ -257,7 +233,7 @@ index 1e54b26a554..075153ac50c 100644
  %}
  
  //----------DEFINITION BLOCK---------------------------------------------------
-@@ -1513,6 +1616,8 @@ const bool Matcher::match_rule_supported(int opcode) {
+@@ -1513,6 +1600,8 @@ const bool Matcher::match_rule_supported(int opcode) {
      case Op_PopCountL:
        // PopCount supported by H/W from z/Architecture G5 (z196) on.
        return (UsePopCountInstruction && VM_Version::has_PopCount());
@@ -266,7 +242,7 @@ index 1e54b26a554..075153ac50c 100644
    }
  
    return true; // Per default match rules are supported.
-@@ -1559,14 +1664,21 @@ OptoRegPair Matcher::vector_return_value(uint ideal_reg) {
+@@ -1559,14 +1648,21 @@ OptoRegPair Matcher::vector_return_value(uint ideal_reg) {
  
  // Vector width in bytes.
  const int Matcher::vector_width_in_bytes(BasicType bt) {
@@ -292,7 +268,7 @@ index 1e54b26a554..075153ac50c 100644
  }
  
  // Limits on vector size (number of elements) loaded into vector.
-@@ -2465,6 +2577,14 @@ ins_attrib ins_should_rematerialize(false);
+@@ -2465,6 +2561,14 @@ ins_attrib ins_should_rematerialize(false);
  // parsing in the ADLC because operands constitute user defined types
  // which are used in instruction definitions.
  
@@ -307,7 +283,7 @@ index 1e54b26a554..075153ac50c 100644
  //----------Simple Operands----------------------------------------------------
  // Immediate Operands
  // Please note:
-@@ -10691,6 +10811,22 @@ instruct reinterpret(iRegL dst) %{
+@@ -10691,6 +10795,22 @@ instruct reinterpret(iRegL dst) %{
    ins_pipe(pipe_class_dummy);
  %}
  
@@ -423,5 +399,5 @@ index a775c8f971a..c156cae2d4e 100644
 +
  #endif // CPU_S390_VMREG_S390_INLINE_HPP
 -- 
-2.31.1
+2.27.0
 
