@@ -1,5 +1,5 @@
 bash configure \
-	--with-boot-jdk=~/jdk-19.0.1+10 \
+	--with-boot-jdk=~/jdk-19.0.2+7 \
 	--with-jtreg=../jtreg/build/images/jtreg/ \
 	--with-gtest=../googletest \
 	--with-hsdis=binutils \
