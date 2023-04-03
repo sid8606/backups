@@ -18,7 +18,6 @@ int main()
 {
 	int a =3, b = 7;
 
-	//foo(a, b);
-	printf("z=%d,\n", sizeof(unsigned long int));
+	foo(a, b);
 	return 0;
 }
