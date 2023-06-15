@@ -1,10 +1,9 @@
 bash configure \
-	--with-boot-jdk=~/jdk-19.0.2+7 \
+	--with-boot-jdk=~/jdk-20+36 \
 	--with-jtreg=../jtreg/build/images/jtreg/ \
 	--with-gtest=../googletest \
 	--with-hsdis=binutils \
 	--with-binutils-src=~/binutils-2.37/ \
-	--with-debug-level=fastdebug \
+	--with-debug-level=slowdebug \
 	--with-native-debug-symbols=internal \
-	--disable-precompiled-headers \
 	--with-num-cores=8
