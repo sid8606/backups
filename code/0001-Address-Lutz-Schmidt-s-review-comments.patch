@@ -1,0 +1,41 @@
+From 4478c093e8a8de23584662873f16fe64404c82d3 Mon Sep 17 00:00:00 2001
+From: Sidraya <sidraya.jayagond@ibm.com>
+Date: Thu, 19 Oct 2023 17:45:40 +0000
+Subject: [PATCH] Address Lutz Schmidt's review comments
+
+---
+ src/hotspot/cpu/s390/downcallLinker_s390.cpp | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/src/hotspot/cpu/s390/downcallLinker_s390.cpp b/src/hotspot/cpu/s390/downcallLinker_s390.cpp
+index ce757045e82..7db1d4b08be 100644
+--- a/src/hotspot/cpu/s390/downcallLinker_s390.cpp
++++ b/src/hotspot/cpu/s390/downcallLinker_s390.cpp
+@@ -96,8 +96,8 @@ void DowncallLinker::StubGenerator::pd_add_offset_to_oop(VMStorage reg_oop, VMSt
+       assert(reg_offset.is_stack(), "expected");
+       assert(reg_offset.stack_size() == 8, "expected long");
+       Address offset_addr(callerSP, FP_BIAS + reg_offset.offset());
+-      __ mem2reg_opt(r_tmp1, offset_addr, true);
+-      __ z_agr(reg_oop_reg, r_tmp1);
++     // __ mem2reg_opt(r_tmp1, offset_addr, true);
++      __ z_ag(reg_oop_reg, offset_addr);
+     }
+   } else {
+     assert(reg_oop.is_stack(), "expected");
+@@ -106,10 +106,10 @@ void DowncallLinker::StubGenerator::pd_add_offset_to_oop(VMStorage reg_oop, VMSt
+     assert(reg_offset.stack_size() == 8, "expected long");
+     Address offset_addr(callerSP, FP_BIAS + reg_offset.offset());
+     Address oop_addr(callerSP, FP_BIAS + reg_oop.offset());
+-    __ mem2reg_opt(r_tmp1,offset_addr, true);
++    //__ mem2reg_opt(r_tmp1,offset_addr, true);
+     __ mem2reg_opt(r_tmp2, oop_addr, true);
+-    __ z_agr(r_tmp1, r_tmp2);
+-    __ reg2mem_opt(r_tmp1, oop_addr, true);
++    __ z_ag(r_tmp2, offset_addr);
++    __ reg2mem_opt(r_tmp2, oop_addr, true);
+   }
+ }
+ 
+-- 
+2.34.1
+
