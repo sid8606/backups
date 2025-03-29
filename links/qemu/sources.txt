@@ -1,0 +1,1 @@
+https://blog.jitendrapatro.me/emulating-aarch64arm64-with-qemu-part-1/
