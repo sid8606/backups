@@ -111,7 +111,13 @@ int main(void)
 		exit(EXIT_FAILURE);
 	}
 
-	/* Create VM */
+	/* Create VM
+	 *  Kernel stores state of each guest in struct kvm.
+	 * This contains info about VM’s mm, VCPUs, busses, etc.
+	 *  Created using KVM_CREATE_VM ioctl.
+	 *  Allocates memory for struct kvm its members and in ARM, initialises stage 2page tables.
+	 *  Returns file descriptor associated with this VM. VM ioctl is now available.
+	 */
 	int vmfd = ioctl(kvmfd, KVM_CREATE_VM, (unsigned long)0);
 	if (vmfd < 0)
 		die("KVM_CREATE_VM");
@@ -141,22 +147,53 @@ int main(void)
 		die("read guest.bin");
 	close(imgfd);
 
-	/* Create vCPU */
+	/* Create vCPU
+	 *  While switching context to guest, each virtual processing element’s state is in struct kvm_vcpu.
+	 *  Contains information such as:
+	 *       VM it belongs.
+	 *       Preempt notifiers.
+	 *       ID.
+	 *       kvm_run structure (discussed ahead).
+	 *       GIC cpu interface state.
+	 *       Timer state.
+	 *       GP registers and sysregs state.
+	 *  a VIRTUAL processing element needs to be initialised.
+	 *  Done using KVM_CREATE_VCPU (vcpu id as param).
+	 *  In the kernel:
+	 *       Allocates kvm_vcpu structure and kvm_run. Links it with VM.
+	 *       Initialise members such as, vcpu_id, kvm, pid, etc.
+	 *       Set arch specifics:
+	 *       Stage 2 MMU.
+	 *       Timer initial state.
+	 *       Initialise GIC CPU interface state.
+	 *       Share structure with EL2 page tables.
+	 */
 	int vcpufd = ioctl(vmfd, KVM_CREATE_VCPU, 0);
 	if (vcpufd < 0)
 		die("KVM_CREATE_VCPU");
 
-	/* Initialize vCPU using preferred target for ARM */
+	/* Initialize vCPU using preferred target for ARM
+	 * Get Preferred target
+	 */
 	struct kvm_vcpu_init target;
 	if (ioctl(vmfd, KVM_ARM_PREFERRED_TARGET, &target) < 0)
 		die("KVM_ARM_PREFERRED_TARGET");
+
+	/* Initilisw vCPU to reset state */
 	if (ioctl(vcpufd, KVM_ARM_VCPU_INIT, &target) < 0)
 		die("KVM_ARM_VCPU_INIT");
 
 	/* Set guest PC to the start of our code region. */
 	set_pc(vcpufd, GUEST_LOAD_ADDR);
 
-	/* mmap kvm_run shared struct */
+	/* mmap kvm_run shared struct
+	 * How to run guest code?
+	 *  Kernel shares memory with userspace for communication wrt KVM.
+	 *       mmap() the vCPU fd.
+	 *       Size for mmap() told by KVM_GET_VCPU_MMAP_SIZE
+	 *       Structure of communication, struct kvm_run
+	 *       If KVM comes back to userspace, reason specified in, run->exit_reason.
+	 */
 	int mmap_size = ioctl(kvmfd, KVM_GET_VCPU_MMAP_SIZE, 0);
 	if (mmap_size <= 0)
 		die("KVM_GET_VCPU_MMAP_SIZE");
