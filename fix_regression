@@ -1,0 +1,179 @@
+From pasic@linux.ibm.com Fri Dec 05 13:17:57 2025
+X-Mozilla-Status: 0001
+X-Mozilla-Status2: 00000000
+Return-Path: <pasic@linux.ibm.com>
+Received: from ltc-imap-p9a.rchland.ibm.com ([unix socket])
+	 by ltc-imap-p9a.rchland.ibm.com (Cyrus 3.0.7-27.el8_10 Fedora) with LMTPA;
+	 Fri, 05 Dec 2025 07:18:19 -0600
+X-Cyrus-Session-Id: ltc-imap-p9a.rchland.ibm.com-1484813-1764940699-1-8817502983903820137
+X-Sieve: CMU Sieve 3.0
+Received: from localhost (localhost.localdomain [127.0.0.1])
+	by ltc-imap-p9a.rchland.ibm.com (Postfix) with ESMTP id 976F0818AF44A;
+	Fri,  5 Dec 2025 07:18:19 -0600 (CST)
+X-Virus-Scanned: amavis at linux.ibm.com
+X-Spam-Flag: NO
+X-Spam-Score: 0.001
+X-Spam-Level:
+X-Spam-Status: No, score=0.001 tagged_above=-9999 required=6.2
+ tests=[SPF_HELO_NONE=0.001] autolearn=disabled
+Received: from ltc-imap-p9a.rchland.ibm.com ([127.0.0.1])
+ by localhost (ltc-imap-p9a.rchland.ibm.com [127.0.0.1]) (amavis, port 10024)
+ with LMTP id 5PnoWv1UiN7k; Fri,  5 Dec 2025 07:18:17 -0600 (CST)
+Received: from mx2.linux.ibm.com (ltc-mx2-p9a.rchland.ibm.com [9.5.196.148])
+	by imap.linux.ibm.com (Postfix) with ESMTPS id 81A8E818AF447;
+	Fri,  5 Dec 2025 07:18:17 -0600 (CST)
+Received: from smtprelay03.fra02v.mail.ibm.com (unknown [9.218.2.224])
+	by mx2.linux.ibm.com (Postfix) with ESMTPS id 0FBF9207DCE;
+	Fri,  5 Dec 2025 07:18:16 -0600 (CST)
+Received: from smtpav05.fra02v.mail.ibm.com (smtpav05.fra02v.mail.ibm.com [10.20.54.104])
+	by smtprelay03.fra02v.mail.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP id 5B5DID0C46334302
+	(version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+	Fri, 5 Dec 2025 13:18:13 GMT
+Received: from smtpav05.fra02v.mail.ibm.com (unknown [127.0.0.1])
+	by IMSVA (Postfix) with ESMTP id CC2C62004B;
+	Fri,  5 Dec 2025 13:18:13 +0000 (GMT)
+Received: from smtpav05.fra02v.mail.ibm.com (unknown [127.0.0.1])
+	by IMSVA (Postfix) with ESMTP id AAA9120043;
+	Fri,  5 Dec 2025 13:18:13 +0000 (GMT)
+Received: from tuxmaker.boeblingen.de.ibm.com (unknown [9.87.85.9])
+	by smtpav05.fra02v.mail.ibm.com (Postfix) with ESMTP;
+	Fri,  5 Dec 2025 13:18:13 +0000 (GMT)
+From: Halil Pasic <pasic@linux.ibm.com>
+To: Sidraya Jayagond <sidraya@linux.ibm.com>,
+        Mahanta Jambigi <mjambigi@linux.ibm.com>,
+        linux390-list@tuxmaker.boeblingen.de.ibm.com
+Cc: Halil Pasic <pasic@linux.ibm.com>,
+        Alexandra Winter <wintera@linux.ibm.com>, hidayath@linux.ibm.com,
+        aswin@linux.ibm.com, wenjia@linux.ibm.com, gbayer@linux.ibm.com,
+        nagamani@linux.ibm.com
+Subject: [PATCH] smc_rnics: fix regression when PFT not available
+Date: Fri,  5 Dec 2025 14:17:57 +0100
+Message-ID: <20251205131757.469125-1-pasic@linux.ibm.com>
+X-Mailer: git-send-email 2.51.0
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+X-TM-AS-GCONF: 00
+
+Before commit 0b965ae ("smc_rnics: Add support for Network Express RNIC
+in smc_rnics") the device type detection was based on PCI vendor and
+device ID. The aforementioned commit switched smc_rnics to doing
+the device type detection primarily on PCI function type (PFT), which
+is in general a sound thing to do.
+
+In certain vitalized environments however (most notably QEMU+KVM)
+PFT is generally not available, and even for passed through devices,
+as of now PFT 0 is reported regardless of the actual PFT as seen
+by G1. And that leads to not detecting passed thorough rnics as such,
+and generally displaying an empty list when smc_rnics is called with
+no parameters, even in a presence of rnics to display.
+
+The patch also degraded our ability to handle to the script unknown
+vendor id 0x15b3 devices gracefully. This can be relevant if a not
+enlightened version of the script is used on new hardware.
+
+Adding a warning about the surprise PFT 0 does not seem to be a
+good idea, because there are PCI devices which are readily
+available on  s390x and for which PFT 0 is just expected: most
+notably virtio-pci, and frankly it isn't all that helpful either.
+
+On the other hand, using the PFT, when available and suitable, is still
+considered superior.
+
+Use the old PCI vendor and device ID based logic back as a fall back,
+when PFT is not available or not known.
+
+With this the regressions introduced by commit 0b965ae ("smc_rnics: Add
+support for Network Express RNIC in smc_rnics") shall be gone.
+
+While at it fix the handling of ports too. The call in the loop that
+iterates over network interfaces to set_RoCE_dev_and_port does not make
+sense, and 'RoCE Express' needs special handling as a device that has
+multiple ports and interfaces per PCI function regardless of the value
+of rawIDs. I don't quite understand why grabbing port from the
+interface's dev_port attribute is a bad idea. That precedence was
+established by 05d1c7e ("smc_rnics: Fix RoCE Express2 port display").
+
+Signed-off-by: Halil Pasic <pasic@linux.ibm.com>
+Fixes: commit 0b965ae ("smc_rnics: Add support for Network Express RNIC in smc_rnics")
+---
+ smc_rnics | 32 ++++++++++++++++++++++++++++----
+ 1 file changed, 28 insertions(+), 4 deletions(-)
+
+diff --git a/smc_rnics b/smc_rnics
+index 70b6f69..b91e9d8 100755
+--- a/smc_rnics
++++ b/smc_rnics
+@@ -148,6 +148,26 @@ function set_by_firmware_lvl() {
+ 	set_RoCE_dev_and_port $name;
+ }
+ 
++function set_by_pciid(){
++
++	case "$vend" in
++	"0x1014" ) # IBM
++		case "$id" in
++		"0x04ed") dev_type="ISM";
++			  int="n/a";;
++		esac;;
++	"0x15b3" ) # Mellanox
++		case "$id" in
++		"0x1003" | \
++		"0x1004") dev_type="RoCE_Express";
++			  multiport_f=1;;
++		"0x1016") set_RoCE_dev_and_port "RoCE_Express2";;
++		"0x101e") set_by_firmware_lvl;;
++		*)	  set_RoCE_dev_and_port "Mlx_$id";;
++		esac;;
++	esac
++}
++
+ function print_rnics() {
+ 	# iterate over slots, as powered-off devices won't show elsewhere
+ 	for fid in `ls -1 /sys/bus/pci/slots`; do
+@@ -192,12 +212,15 @@ function print_rnics() {
+ 		dev_type="${vend#0x}:${id#0x}";
+ 		pft=`cat pft`;
+ 		vfn=`cat vfn`;
++		multiport_f=0;
+ 		if [ $rawIDs -eq 0 ]; then
++			# prefer PFT for disamgibuating devices
+ 			case "$pft" in
+ 			"0x05") dev_type="ISM";
+ 				int="n/a";
+ 				set_RoCE_pft_and_vfn "$pft" "$vfn";;
+ 			"0x02") dev_type="RoCE_Express";
++				multipor_f=1;
+ 				set_RoCE_pft_and_vfn "$pft" "$vfn";;
+ 			"0x0a") set_by_firmware_lvl;
+ 				set_RoCE_pft_and_vfn "$pft" "$vfn";;
+@@ -205,9 +228,11 @@ function print_rnics() {
+ 			"0x0f") set_RoCE_dev_and_port "Network_Express";
+ 				set_RoCE_pft_and_vfn "$pft" "$vfn";;
+ 			*)
++				# but if that fails go via the pci IDs
++				set_by_pciid
+ 				# For unknown PCI vendors, determine VF flag based on VFN value.
+ 				# This ensures consistent handling even for unrecognized vendor devices
+-				[ $all -eq 0 ] && continue
++				[ "$dev_type"  = "" -a $all -eq 0 ] && continue
+ 				if (( 16#${vfn#0x} != 0 )); then
+ 					vfn="y";
+ 				else
+@@ -225,11 +250,10 @@ function print_rnics() {
+ 				print_rnic;
+ 				continue;
+ 			fi
+-			# one device can have multiple interfaces (one per port)
+ 			for int in $interfaces; do
+-				set_RoCE_dev_and_port "$dev_type";
++				# one device can have multiple interfaces (one per port)
+ 				cd /sys/bus/pci/devices/$addr/net/$int;
+-				if [ "$((pft))" -eq 2 ] && [ -e dev_port ]; then
++				if [ $multiport_f -eq 1 ] && [ -e dev_port ]; then
+ 					port=`cat dev_port`;
+ 				fi
+ 				print_rnic;
+-- 
+2.51.0
+
+
